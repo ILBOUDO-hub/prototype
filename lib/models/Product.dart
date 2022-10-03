@@ -259,7 +259,7 @@ List<Gateau> gateau = [
       Gateau(
     name: "Cookie classic",
         auteur: "Auguste",
-    categorie: "cake",
+    categorie: "mode",
     isFavorite: true,
     price: 1.99,
     added: true,
@@ -326,6 +326,31 @@ List<Gateau> gateau = [
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/categories/bag_5.png",
+  ),
+
+
+            Gateau(
+    name: "Audi A8",
+        auteur: "Roch",
+    categorie: "voiture",
+    isFavorite: false,
+    price: 2.99,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/images/ferrari4.jpg",
+  ),
+
+            Gateau(
+    name: "Lamborghini",
+        auteur: "Waly",
+    categorie: "voiture",
+    isFavorite: true,
+    price: 2.99,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/images/ford4.jpg",
   ),
 ];
 

@@ -17,7 +17,7 @@ class _CakePageState extends State<CakePage> {
       final String nameposter = gleinfo.name;
       final String cookiecategorie = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (cookiecategorie == "cake") {
+      if (cookiecategorie == "voiture") {
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
         final String imageposter = gleinfo.imgPath;

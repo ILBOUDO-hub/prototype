@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: movieOscar,
           ),
             ),
-          SizedBox(height: 15.0)
+          SizedBox(height: 15.0),
         ],
       ),
     );

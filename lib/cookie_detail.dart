@@ -37,7 +37,7 @@ class CookieDetail extends StatelessWidget {
         SizedBox(height: 15.0),
         Padding(
           padding: EdgeInsets.only(left: 20.0),
-          child: Text('Cookie',
+          child: Text('Yatou',
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 42.0,

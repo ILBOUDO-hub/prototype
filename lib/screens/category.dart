@@ -77,7 +77,7 @@ class _CategoryState extends State<Category>
                       )),
                 ),
                 Tab(
-                  child: Text('Cake',
+                  child: Text('Voiture',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
