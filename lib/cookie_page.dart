@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:prototype/cookie_detail.dart';
 import 'package:prototype/models/Product.dart';
 
-
 class CookiePage extends StatefulWidget {
   @override
   State<CookiePage> createState() => _CookiePageState();
@@ -16,32 +15,31 @@ class _CookiePageState extends State<CookiePage> {
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
       final String nameposter = gleinfo.name;
+      final String cookiecategorie = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (nameposter == "Cookie mint" || nameposter == "Cookie classic") {   
+      if (cookiecategorie == "mode") {
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
         final String imageposter = gleinfo.imgPath;
         int pourcent = 85 + i;
 
-        movieOscar.add(
-     Card(
-
+        movieOscar.add(Card(
           child: Padding(
               padding:
                   EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
-                //  if(name == "Cookie mint"){}
+              //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
-                    
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => CookieDetail(
                             assetPath: gleinfo.imgPath,
                             cookieprice: gleinfo.price,
-                            cookiename: gleinfo.name)));
-  
-                //  );
-                  },
+                            cookiename: gleinfo.name,
+                            cookieauteur: gleinfo.auteur,
+                            cookiecategorie: gleinfo.categorie)));
 
+                    //  );
+                  },
                   child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
@@ -64,7 +62,6 @@ class _CookiePageState extends State<CookiePage> {
                                       : Icon(Icons.favorite_border,
                                           color: Color(0xFFEF7532))
                                 ])),
-                                
                         Hero(
                             tag: gleinfo.imgPath,
                             child: Container(
@@ -87,12 +84,13 @@ class _CookiePageState extends State<CookiePage> {
                                 fontSize: 14.0)),
                         Padding(
                             padding: EdgeInsets.all(8.0),
-                            child:
-                                Container(color: Color(0xFFEBEBEB), height: 1.0)),
+                            child: Container(
+                                color: Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
                             padding: EdgeInsets.only(left: 5.0, right: 5.0),
                             child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   if (!gleinfo.added) ...[
                                     Icon(Icons.shopping_basket,
@@ -117,8 +115,7 @@ class _CookiePageState extends State<CookiePage> {
                                   ]
                                 ]))
                       ])))),
-        )
-        );
+        ));
       }
     }
   }
@@ -137,20 +134,19 @@ class _CookiePageState extends State<CookiePage> {
         children: <Widget>[
           SizedBox(height: 15.0),
           Container(
-              padding: EdgeInsets.only(right: 15.0),
-              width: MediaQuery.of(context).size.width - 30.0,
-              height: MediaQuery.of(context).size.height - 50.0,
-
-              child: GridView.count(
-                physics:
-                BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-                childAspectRatio: 0.815,
-                crossAxisCount: 2,
-                shrinkWrap: true,
-                //movieOscar qui liste les articles
-                children: movieOscar,
-          ),
+            padding: EdgeInsets.only(right: 15.0),
+            width: MediaQuery.of(context).size.width - 30.0,
+            height: MediaQuery.of(context).size.height - 50.0,
+            child: GridView.count(
+              physics: BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
+              childAspectRatio: 0.815,
+              crossAxisCount: 2,
+              shrinkWrap: true,
+              //movieOscar qui liste les articles
+              children: movieOscar,
             ),
+          ),
           SizedBox(height: 15.0)
         ],
       ),

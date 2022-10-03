@@ -4,9 +4,9 @@ import 'package:prototype/galerie.dart';
 import 'package:prototype/models/Product.dart';
 
 class CookieDetail extends StatelessWidget {
-  final assetPath, cookieprice, cookiename;
+  final assetPath, cookieauteur, cookieprice, cookiename, cookiecategorie;
 
-  CookieDetail({this.assetPath, this.cookieprice, this.cookiename});
+  CookieDetail({this.assetPath, this.cookieauteur, this.cookieprice, this.cookiename,this.cookiecategorie});
   @override
   Widget build(BuildContext context) {
     String cookieprices = cookieprice.toString();
@@ -75,7 +75,8 @@ class CookieDetail extends StatelessWidget {
                 builder: (context) => Galerie(
                     assetPath: assetPath,
                     cookieprice: cookieprice,
-                    cookiename: cookiename)));
+                    cookiename: cookiename,
+                    cookieauteur: cookieauteur)));
           }),
         ),
                 IconButton(
@@ -85,13 +86,26 @@ class CookieDetail extends StatelessWidget {
                 builder: (context) => Galerie(
                     assetPath: assetPath,
                     cookieprice: cookieprice,
-                    cookiename: cookiename)));
+                    cookiename: cookiename,
+                    cookieauteur: cookieauteur)));
           }),
         )
 
             ],
           ),
         ),
+                SizedBox(height: 10.0),
+        Center(
+              child: Text(
+                "Vendeur: $cookieauteur",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontFamily: 'Varela',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                    color: Color.fromARGB(255, 83, 83, 83)),
+        )),
+
         SizedBox(height: 20.0),
         Center(
           child: Container(

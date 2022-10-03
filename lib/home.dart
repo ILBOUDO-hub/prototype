@@ -36,7 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         builder: (context) => CookieDetail(
                             assetPath: gleinfo.imgPath,
                             cookieprice: gleinfo.price,
-                            cookiename: gleinfo.name)));
+                            cookiename: gleinfo.name,
+                            cookieauteur: gleinfo.auteur,
+                            cookiecategorie: gleinfo.categorie)));
   
                 //  );
                   },

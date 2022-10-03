@@ -215,12 +215,14 @@ List<Product> products = [
 ];
 
 class Gateau {
-  final String name, imgPath, context;
+  final String name, auteur, imgPath, categorie,context;
   final double price;
   final bool added, isFavorite;
 
   Gateau({
     required this.name,
+    required this.auteur,
+    required this.categorie,
     required this.price,
     required this.imgPath,
     required this.context,
@@ -232,6 +234,8 @@ class Gateau {
 List<Gateau> gateau = [
   Gateau(
     name: "Cookie mint",
+    auteur: "Auguste",
+    categorie: "mode",
     isFavorite: false,
     price: 3.99,
     added: true,
@@ -242,6 +246,8 @@ List<Gateau> gateau = [
 
     Gateau(
     name: "Cookie cream",
+        auteur: "Auguste I",
+    categorie: "mode",
     isFavorite: true,
     price: 5.99,
     added: true,
@@ -252,7 +258,9 @@ List<Gateau> gateau = [
 
       Gateau(
     name: "Cookie classic",
-    isFavorite: false,
+        auteur: "Auguste",
+    categorie: "cake",
+    isFavorite: true,
     price: 1.99,
     added: true,
     context:
@@ -262,6 +270,8 @@ List<Gateau> gateau = [
 
       Gateau(
     name: "Cookie choco",
+        auteur: "Brice",
+    categorie: "mode",
     isFavorite: false,
     price: 2.99,
     added: true,

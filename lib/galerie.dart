@@ -4,8 +4,10 @@ import 'package:prototype/models/Product.dart';
 
 class Galerie extends StatefulWidget {
   @override
-  final assetPath, cookieprice, cookiename;
-  Galerie({this.assetPath, this.cookieprice, this.cookiename});
+  final assetPath, cookieprice, cookiename, cookieauteur;
+  Galerie(
+      {this.assetPath, this.cookieprice, this.cookiename, this.cookieauteur});
+
   State<Galerie> createState() => _GalerieState();
 }
 
@@ -21,8 +23,8 @@ class _GalerieState extends State<Galerie> {
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
       //final String categorieposter = gleinfo.name;
-      final String nameposter = gleinfo.name;
-      if (nameposter == widget.cookiename) {
+      // final String auteurposter = gleinfo.auteur;
+      if (gleinfo.auteur.toString() == widget.cookieauteur.toString()) {
         final String nameposter = gleinfo.name;
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
@@ -32,16 +34,17 @@ class _GalerieState extends State<Galerie> {
         movieOscar.add(Card(
           child: SingleChildScrollView(
             child: Padding(
-                padding:
-                    EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+                padding: EdgeInsets.only(
+                    top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
                 child: InkWell(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => CookieDetail(
                               assetPath: gleinfo.imgPath,
                               cookieprice: gleinfo.price,
-                              cookiename: gleinfo.name)));
-
+                              cookiename: gleinfo.name,
+                              cookieauteur: gleinfo.auteur,
+                            cookiecategorie: gleinfo.categorie)));
                     },
                     child: Container(
                         decoration: BoxDecoration(
@@ -128,6 +131,8 @@ class _GalerieState extends State<Galerie> {
   void initState() {
     super.initState();
     buildList();
+    /*String auteurposter = "d"; 
+    auteurposter == widget.cookieauteur;*/
     //build();
   }
 /*
@@ -215,7 +220,7 @@ class _GalerieState extends State<Galerie> {
                               height: 20,
                             ),
                             Text(
-                              widget.cookiename,
+                              widget.cookieauteur,
                               //'Vendeur: $vendeur',
                               style: TextStyle(
                                   color: Colors.black,
@@ -258,25 +263,26 @@ class _GalerieState extends State<Galerie> {
                                 ),
                               ],
                             ),
-Row(
-  mainAxisAlignment: MainAxisAlignment.center,
-  children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
                                 Text(
-                              movieOscar.length.toString(),// Pour recupérer le nombre des publications
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                                                        Text(
-                              "Publications",
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
-                            ),
-  ],
-)
+                                  movieOscar.length
+                                      .toString(), // Pour recupérer le nombre des publications
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                Text(
+                                  "Publications",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            )
                           ],
                         ),
                       ],
