@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/accessoire.dart';
+import 'package:prototype/appareil.dart';
 import 'package:prototype/cookie_page.dart';
 import 'package:prototype/cake_page.dart';
 
@@ -15,7 +17,7 @@ class _CategoryState extends State<Category>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
   }
 
   @override
@@ -68,6 +70,13 @@ class _CategoryState extends State<Category>
                       )),
                 ),
                 Tab(
+                  child: Text('Mode',
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 21.0,
+                      )),
+                ),
+                Tab(
                   child: Text('Cake',
                       style: TextStyle(
                         fontFamily: 'Varela',
@@ -75,7 +84,7 @@ class _CategoryState extends State<Category>
                       )),
                 ),
                 Tab(
-                  child: Text('Ice cream',
+                  child: Text('Appareils',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
@@ -89,8 +98,9 @@ class _CategoryState extends State<Category>
                   controller: _tabController,
                   children: [
                     CookiePage(),
+                    Accessoire(),
                     CakePage(),
-                    CookiePage(),
+                    Appareil(),
                   ]
                 )
               )

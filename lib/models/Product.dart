@@ -279,6 +279,54 @@ List<Gateau> gateau = [
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/cookiechoco.jpg",
   ),
+
+        Gateau(
+    name: "Manette",
+        auteur: "Lebian",
+    categorie: "appareil",
+    isFavorite: true,
+    price: 2.99,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath:  "assets/categories/pc_5.png",
+  ),
+
+        Gateau(
+    name: "PS4",
+        auteur: "Eleazar",
+    categorie: "appareil",
+    isFavorite: false,
+    price: 2.99,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/pc_1.png",
+  ),
+
+          Gateau(
+    name: "Dolce Gabana",
+        auteur: "Eleazar",
+    categorie: "accessoire",
+    isFavorite: false,
+    price: 2.99,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/bag_2.png",
+  ),
+
+          Gateau(
+    name: "Christian Dior",
+        auteur: "Brice",
+    categorie: "accessoire",
+    isFavorite: true,
+    price: 2.99,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/bag_5.png",
+  ),
 ];
 
 
