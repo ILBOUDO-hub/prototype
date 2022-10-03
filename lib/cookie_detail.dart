@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:prototype/bottom_bar.dart';
 import 'package:prototype/galerie.dart';
 import 'package:prototype/models/Product.dart';
+import 'package:whatsapp_unilink/whatsapp_unilink.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CookieDetail extends StatelessWidget {
   final assetPath, cookieauteur, cookieprice, cookiename, cookiecategorie;
@@ -120,7 +122,7 @@ class CookieDetail extends StatelessWidget {
           ),
         ),
         SizedBox(height: 20.0),
-        Center(
+        /*Center(
             child: Container(
                 width: MediaQuery.of(context).size.width - 50.0,
                 height: 50.0,
@@ -135,8 +137,70 @@ class CookieDetail extends StatelessWidget {
                       fontSize: 14.0,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
-                )))),
+                )))),*/
+Center(
+  child:                 Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      FloatingActionButton.extended(
+                        heroTag: 'btn1',
+                        extendedPadding: const EdgeInsets.all(33.0),
+                        label: const Text(
+                          'Ecrire',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.white,
+                          ),
+                        ),
+                        icon: const Icon(Icons.message_outlined),
+                        backgroundColor: Colors.brown,
+                        onPressed: () {
+                          /* Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext context) {
+                  return MyApp();
+                })); */
+                          _lauchWhatsapp();
+                        },
+                      ),
+                      const FloatingActionButton.extended(
+                          heroTag: 'btn2',
+                          extendedPadding: EdgeInsets.all(30.0),
+                          label: Text(
+                            'Appeler',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                              color: Colors.white,
+                            ),
+                          ),
+                          icon: Icon(
+                            Icons.phone_rounded,
+                            color: Colors.white,
+                          ),
+                          backgroundColor: Colors.brown,
+                          onPressed: _makingPhoneCall),
+                    ]),
+)
       ]),
     );
   }
+}
+
+
+_makingPhoneCall() async {
+  const url = 'tel:+22661319367';
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+_lauchWhatsapp() async {
+  final link = WhatsAppUnilink(
+      phoneNumber: '+22662825040',
+      text:
+          "Je vous écrit car j'ai un soucis avec mon compte.Pouvez-vous m'aider à le resoudre s'il vous plait !");
+  await launch('$link');
 }
