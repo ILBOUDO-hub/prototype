@@ -189,7 +189,7 @@ Center(
 
 
 _makingPhoneCall() async {
-  const url = 'tel:+22661319367';
+  const url = 'tel:+22662825040';
   if (await canLaunch(url)) {
     await launch(url);
   } else {
@@ -201,6 +201,6 @@ _lauchWhatsapp() async {
   final link = WhatsAppUnilink(
       phoneNumber: '+22662825040',
       text:
-          "Je vous écrit car j'ai un soucis avec mon compte.Pouvez-vous m'aider à le resoudre s'il vous plait !");
+          "Bonjour, je vous écrit car j'ai un soucis avec mon compte.Pouvez-vous m'aider à le resoudre s'il vous plait !");
   await launch('$link');
 }
