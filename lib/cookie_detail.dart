@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/bottom_bar.dart';
 import 'package:prototype/galerie.dart';
 import 'package:prototype/models/Product.dart';
 import 'package:prototype/screens/parametres/favoris.dart';
@@ -19,26 +18,26 @@ class CookieDetail extends StatelessWidget {
         elevation: 0.0,
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
+          icon: const Icon(Icons.arrow_back, color: Color(0xFF545D68)),
           onPressed: () {
             Navigator.of(context).pop();
           },
         ),
         title: Text(cookiename,
-            style: TextStyle(
+            style: const TextStyle(
                 fontFamily: 'Varela',
                 fontSize: 20.0,
                 color: Color(0xFF545D68))),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
+            icon: const Icon(Icons.notifications_none, color: Color(0xFF545D68)),
             onPressed: () {},
           ),
         ],
       ),
       body: ListView(children: [
-        SizedBox(height: 15.0),
-        Padding(
+        const SizedBox(height: 15.0),
+        const Padding(
           padding: EdgeInsets.only(left: 20.0),
           child: Text('Yatou',
               style: TextStyle(
@@ -47,21 +46,21 @@ class CookieDetail extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                   color: Colors.brown)),
         ),
-        SizedBox(height: 15.0),
+        const SizedBox(height: 15.0),
         Hero(
             tag: assetPath,
             child: Image.asset(assetPath,
                 height: 150.0, width: 100.0, fit: BoxFit.contain)),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         Center(
           child: Text("\$$cookieprices",
-              style: TextStyle(
+              style: const TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 22.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.brown)),
         ),
-        SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Center(
           
           child: Padding(
@@ -70,12 +69,12 @@ class CookieDetail extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(cookiename,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Color(0xFF575E67),
                         fontFamily: 'Varela',
                         fontSize: 24.0)),
         IconButton(
-            icon: Icon(Icons.account_circle),
+            icon: const Icon(Icons.account_circle),
             onPressed: (() {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => Galerie(
@@ -86,7 +85,7 @@ class CookieDetail extends StatelessWidget {
             }),
         ),
                   IconButton(
-            icon: Icon(Icons.favorite_border),
+            icon: const Icon(Icons.favorite_border),
             onPressed: (() {
                 Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
@@ -95,7 +94,7 @@ class CookieDetail extends StatelessWidget {
             }),
         ),
                   IconButton(
-            icon: Icon(Icons.share),
+            icon: const Icon(Icons.share),
             onPressed: (() {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => Galerie(
@@ -110,23 +109,23 @@ class CookieDetail extends StatelessWidget {
             ),
           ),
         ),
-                SizedBox(height: 10.0),
+        const SizedBox(height: 10.0),
         Center(
               child: Text(
                 "Vendeur: $cookieauteur",
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                     fontFamily: 'Varela',
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0,
                     color: Color.fromARGB(255, 83, 83, 83)),
         )),
 
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         Center(
           child: Container(
             width: MediaQuery.of(context).size.width - 50.0,
-            child: Text(
+            child: const Text(
                 'Cold, creamy ice cream sandwiched between delicious deluxe cookies. Pick your favorite deluxe cookies and ice cream flavor.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
@@ -135,7 +134,7 @@ class CookieDetail extends StatelessWidget {
                     color: Color(0xFFB4B8B9))),
           ),
         ),
-        SizedBox(height: 20.0),
+        const SizedBox(height: 20.0),
         /*Center(
             child: Container(
                 width: MediaQuery.of(context).size.width - 50.0,

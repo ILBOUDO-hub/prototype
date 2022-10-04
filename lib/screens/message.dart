@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/constants/custom_text.dart';
 import 'package:prototype/screens/inbox.dart';
 
 class Message extends StatefulWidget {
@@ -14,7 +13,7 @@ class _MessageState extends State<Message> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Text(
+            const Text(
               'Mes messages',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -39,7 +38,7 @@ class _MessageState extends State<Message> {
 
             // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -63,7 +62,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/4.jpg",),
@@ -72,7 +71,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  BAKO Maxime',
                         style: TextStyle(
                             color: Colors.black,
@@ -88,7 +87,7 @@ class _MessageState extends State<Message> {
 
             // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -112,7 +111,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/5.jpg",),
@@ -121,7 +120,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  DIALLO Fadilatou',
                         style: TextStyle(
                             color: Colors.black,
@@ -137,7 +136,7 @@ class _MessageState extends State<Message> {
 
             // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -161,7 +160,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/3.jpg",),
@@ -170,7 +169,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  NANA Elodie',
                         style: TextStyle(
                             color: Colors.black,
@@ -186,7 +185,7 @@ class _MessageState extends State<Message> {
 
             // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -210,7 +209,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/2.jpg",),
@@ -219,7 +218,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  SAWADOGO Haida',
                         style: TextStyle(
                             color: Colors.black,
@@ -235,7 +234,7 @@ class _MessageState extends State<Message> {
 
             // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -259,7 +258,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/6.jpg",),
@@ -268,7 +267,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  ROUAMBA Waly',
                         style: TextStyle(
                             color: Colors.black,
@@ -284,7 +283,7 @@ class _MessageState extends State<Message> {
 
             // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -308,7 +307,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/1.jpg",),
@@ -317,7 +316,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  BADO Roch',
                         style: TextStyle(
                             color: Colors.black,
@@ -333,7 +332,7 @@ class _MessageState extends State<Message> {
 
                         // ElevatedButton
             Container(
-              margin: EdgeInsets.only(left: 10, right: 10),
+              margin: const EdgeInsets.only(left: 10, right: 10),
               width: double.infinity,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -357,7 +356,7 @@ class _MessageState extends State<Message> {
                     child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.brown,
                         image: DecorationImage(
                           image: AssetImage("assets/categories/1.jpg",),
@@ -366,7 +365,7 @@ class _MessageState extends State<Message> {
                       ),
                     ),
                     ),
-                      Text(
+                      const Text(
                         '  Ouedraogo Isaac',
                         style: TextStyle(
                             color: Colors.black,

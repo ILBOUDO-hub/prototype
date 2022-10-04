@@ -77,7 +77,7 @@ class _AnnoncesState extends State<Annonces> {
                 width: 110,
                 margin: const EdgeInsets.all(30.0),
                 padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.brown,
                   borderRadius: BorderRadius.all(
                     Radius.circular(5.0),
@@ -85,7 +85,7 @@ class _AnnoncesState extends State<Annonces> {
                     //color: Colors.brown
                   )
                 ),
-                child: Text(
+                child: const Text(
                   'Photo',
                   textAlign: TextAlign.center,
                   style: TextStyle(),
@@ -96,7 +96,7 @@ class _AnnoncesState extends State<Annonces> {
                 width: 110,
                 margin: const EdgeInsets.all(30.0),
                 padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.brown,
                   borderRadius: BorderRadius.all(
                     Radius.circular(5.0),
@@ -104,7 +104,7 @@ class _AnnoncesState extends State<Annonces> {
                     //color: Colors.brown
                   )
                 ),
-                child: Text(
+                child: const Text(
                   'Photo',
                   textAlign: TextAlign.center,
                   style: TextStyle(),
@@ -186,7 +186,7 @@ class _AnnoncesState extends State<Annonces> {
                             height: 160,
                             fit: BoxFit.cover,
                           )
-                        : Text(""),
+                        : const Text(""),
                   ],
                 ),
               ),
@@ -286,7 +286,7 @@ class _AnnoncesState extends State<Annonces> {
                 height: 20,
               ),
               FloatingActionButton.extended(
-                extendedPadding: EdgeInsets.all(100.0),
+                extendedPadding: const EdgeInsets.all(100.0),
                 label: const Text(
                   'Valider',
                   style: TextStyle(
@@ -298,8 +298,8 @@ class _AnnoncesState extends State<Annonces> {
                 backgroundColor: Colors.brown,
                 onPressed: () {
                   Navigator.push(context,
-                      new MaterialPageRoute(builder: (BuildContext context) {
-                    return SignInScreen();
+                    MaterialPageRoute(builder: (BuildContext context) {
+                    return const SignInScreen();
                   })); 
                 },
               ),

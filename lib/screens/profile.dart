@@ -147,7 +147,7 @@ class _PageProfileSate extends State<PageProfile> {
             Card(
               elevation: 2.0,
                 child: ElevatedButton(
-                                    style: ButtonStyle(
+                      style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       padding:
                           MaterialStateProperty.all(const EdgeInsets.all(30)),
@@ -169,7 +169,7 @@ class _PageProfileSate extends State<PageProfile> {
             Card(
               elevation: 2.0,
                 child: ElevatedButton(
-                                    style: ButtonStyle(
+                    style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.white),
                       padding:
                           MaterialStateProperty.all(const EdgeInsets.all(30)),

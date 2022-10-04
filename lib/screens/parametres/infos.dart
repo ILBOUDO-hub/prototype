@@ -102,7 +102,7 @@ class _InfosState extends State<Infos> {
                             height: 100,
                             fit: BoxFit.cover,
                           )
-                        :Text("Photo", textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+                        :const Text("Photo", textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
                   ],
                 ),
                 ),
@@ -114,7 +114,7 @@ class _InfosState extends State<Infos> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FloatingActionButton(
-                    child: const Icon(
+                    child: Icon(
                       Icons.camera_alt,
                       size: 50,
                       color: Colors.black,
@@ -154,7 +154,7 @@ class _InfosState extends State<Infos> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 12,),
+                                  const SizedBox(height: 12,),
                                   //le button importation de photo a partir de la gallerie
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -268,7 +268,7 @@ class _InfosState extends State<Infos> {
                   height: 20,
                 ),
                 FloatingActionButton.extended(
-                  extendedPadding: EdgeInsets.all(100.0),
+                  extendedPadding: const EdgeInsets.all(100.0),
                   label: const Text(
                     'Valider',
                     style: TextStyle(

@@ -11,9 +11,9 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController _passwordTextController = TextEditingController();
-  TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _usernameTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _usernameTextController = TextEditingController();
 
 
   @override
@@ -44,7 +44,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   20, MediaQuery.of(context).size.height * 0.2, 20, 0),
               child: Column(
                 children: <Widget>[
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   //logoWidget("assets/images/logo.png"),
@@ -54,22 +54,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold,color: Colors.brown[900]),
                       )
                     ),
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
                   reusableTextField("Enter Username", Icons.person_outline,
                       false, _usernameTextController),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   reusableTextField("Enter Email", Icons.person_outline, false,
                       _emailTextController),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   reusableTextField("Enter Password", Icons.lock_outlined, true,
                       _passwordTextController),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   signInSignUpButton(context, false, () {
@@ -80,7 +80,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         .then((value) {
                       print("new account created");
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => BottomNavbar()));
+                          MaterialPageRoute(builder: (context) => const BottomNavbar()));
                     }).onError((error, stackTrace) {
                       print("error ${error.toString()}");
                     });

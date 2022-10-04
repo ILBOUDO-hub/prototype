@@ -97,7 +97,7 @@ class _galerieState extends State<galerie> {
                         const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           'Faso Dafani',
                           style: TextStyle(
                               color: Colors.black,
@@ -145,7 +145,7 @@ class _galerieState extends State<galerie> {
                                 ),
                               ],
                             ),
-                        Text(
+                        const Text(
                           '145 Publications',
                           style: TextStyle(
                               color: Colors.black,
@@ -163,7 +163,7 @@ class _galerieState extends State<galerie> {
                     height: 50,
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-                    child: Text(
+                    child: const Text(
                       'Vente de tissus traditionnel et autres articles de mode.',
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -176,7 +176,7 @@ class _galerieState extends State<galerie> {
                     height: 30,
                     width: double.infinity,
                     padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-                    child: Text(
+                    child: const Text(
                       'Tel: +226 62825040',
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -188,7 +188,7 @@ class _galerieState extends State<galerie> {
                   Container(
                     height: 50,
                     width: double.infinity,
-                    padding: EdgeInsets.only(left: 15, right: 1, top: 5),
+                    padding: const EdgeInsets.only(left: 15, right: 1, top: 5),
                     child: const Text(
                       'Localisation: Ouagadougou / Karpala',
                       textAlign: TextAlign.justify,
@@ -203,8 +203,8 @@ class _galerieState extends State<galerie> {
               Container(
                 child: SingleChildScrollView(
                     child: Column(
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       'Les articles',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),

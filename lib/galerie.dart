@@ -63,9 +63,9 @@ class _GalerieState extends State<Galerie> {
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     gleinfo.isFavorite
-                                        ? Icon(Icons.favorite,
+                                        ? const Icon(Icons.favorite,
                                             color: Color(0xFFEF7532))
-                                        : Icon(Icons.favorite_border,
+                                        : const Icon(Icons.favorite_border,
                                             color: Color(0xFFEF7532))
                                   ])),
                           Hero(
@@ -77,46 +77,46 @@ class _GalerieState extends State<Galerie> {
                                       image: DecorationImage(
                                           image: AssetImage(gleinfo.imgPath),
                                           fit: BoxFit.contain)))),
-                          SizedBox(height: 3.0),
+                          const SizedBox(height: 3.0),
                           Text("\$$priceposter",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color(0xFFCC8053),
                                   fontFamily: 'Varela',
                                   fontSize: 14.0)),
                           Text(gleinfo.name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Color(0xFF575E67),
                                   fontFamily: 'Varela',
                                   fontSize: 14.0)),
                           Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Container(
                                   color: Color(0xFFEBEBEB), height: 1.0)),
                           Padding(
-                              padding: EdgeInsets.only(left: 5.0, right: 5.0),
+                              padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                               child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
                                   children: [
                                     if (!gleinfo.added) ...[
-                                      Icon(Icons.shopping_basket,
+                                      const Icon(Icons.shopping_basket,
                                           color: Color(0xFFD17E50), size: 12.0),
-                                      Text('Add to cart',
+                                      const Text('Add to cart',
                                           style: TextStyle(
                                               fontFamily: 'Varela',
                                               color: Color(0xFFD17E50),
                                               fontSize: 12.0))
                                     ],
                                     if (gleinfo.added) ...[
-                                      Icon(Icons.remove_circle_outline,
+                                      const Icon(Icons.remove_circle_outline,
                                           color: Color(0xFFD17E50), size: 12.0),
-                                      Text('3',
+                                      const Text('3',
                                           style: TextStyle(
                                               fontFamily: 'Varela',
                                               color: Color(0xFFD17E50),
                                               fontWeight: FontWeight.bold,
                                               fontSize: 12.0)),
-                                      Icon(Icons.add_circle_outline,
+                                      const Icon(Icons.add_circle_outline,
                                           color: Color(0xFFD17E50), size: 12.0),
                                     ]
                                   ]))
@@ -187,7 +187,7 @@ class _GalerieState extends State<Galerie> {
           ),
         ),
         body: SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
+            physics: const AlwaysScrollableScrollPhysics(),
             //  physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
             // scrollDirection: Axis.vertical,
             child: Stack(children: <Widget>[
@@ -222,7 +222,7 @@ class _GalerieState extends State<Galerie> {
                             Text(
                               widget.cookieauteur,
                               //'Vendeur: $vendeur',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
@@ -269,12 +269,12 @@ class _GalerieState extends State<Galerie> {
                                 Text(
                                   movieOscar.length
                                       .toString(), // Pour recupérer le nombre des publications
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.black,
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                Text(
+                                const Text(
                                   "Publications",
                                   style: TextStyle(
                                       color: Colors.black,
@@ -293,8 +293,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 50,
                         width: double.infinity,
-                        padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-                        child: Text(
+                        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+                        child: const Text(
                           'Vente de tissus traditionnel et autres articles de mode.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
@@ -306,8 +306,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 30,
                         width: double.infinity,
-                        padding: EdgeInsets.only(left: 15, right: 15, top: 5),
-                        child: Text(
+                        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+                        child: const Text(
                           'Tel: +226 62825040',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
@@ -319,7 +319,7 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 50,
                         width: double.infinity,
-                        padding: EdgeInsets.only(left: 15, right: 1, top: 5),
+                        padding: const EdgeInsets.only(left: 15, right: 1, top: 5),
                         child: const Text(
                           'Localisation: Ouagadougou / Karpala',
                           textAlign: TextAlign.justify,
@@ -341,13 +341,13 @@ class _GalerieState extends State<Galerie> {
                           style: TextStyle(
                               fontSize: 22, fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(height: 15.0),
+                        const SizedBox(height: 15.0),
                         Container(
-                          padding: EdgeInsets.only(right: 15.0),
+                          padding: const EdgeInsets.only(right: 15.0),
                           width: MediaQuery.of(context).size.width - 30.0,
                           height: MediaQuery.of(context).size.height - 50.0,
                           child: GridView.count(
-                            physics: BouncingScrollPhysics(
+                            physics: const BouncingScrollPhysics(
                                 parent: AlwaysScrollableScrollPhysics()),
                             childAspectRatio: 0.815,
                             crossAxisCount: 2,
@@ -356,7 +356,7 @@ class _GalerieState extends State<Galerie> {
                             children: movieOscar,
                           ),
                         ),
-                        SizedBox(height: 15.0)
+                        const SizedBox(height: 15.0)
                       ],
                     )),
                   ),

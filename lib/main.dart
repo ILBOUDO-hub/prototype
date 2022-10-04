@@ -72,7 +72,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.brown,
         child: Icon(
-          Icons.camera_enhance,
+         Icons.camera_enhance,
         ),
         onPressed: (() {
           setState(() {
@@ -83,7 +83,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         notchMargin: 10,
         child: Container(
           height: 60,

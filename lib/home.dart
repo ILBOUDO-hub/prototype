@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
           child: Padding(
               padding:
-                  EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
                 //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
@@ -55,14 +55,14 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Colors.white),
                       child: Column(children: [
                         Padding(
-                            padding: EdgeInsets.all(5.0),
+                            padding: const EdgeInsets.all(5.0),
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   gleinfo.isFavorite
-                                      ? Icon(Icons.favorite,
+                                      ? const Icon(Icons.favorite,
                                           color: Color(0xFFEF7532))
-                                      : Icon(Icons.favorite_border,
+                                      : const Icon(Icons.favorite_border,
                                           color: Color(0xFFEF7532))
                                 ])),
                                 
@@ -75,19 +75,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                     image: DecorationImage(
                                         image: AssetImage(gleinfo.imgPath),
                                         fit: BoxFit.contain)))),
-                        SizedBox(height: 7.0),
+                        const SizedBox(height: 7.0),
                         Text("\$$priceposter",
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Color(0xFFCC8053),
                                 fontFamily: 'Varela',
                                 fontSize: 14.0)),
                         Text(gleinfo.name,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Color(0xFF575E67),
                                 fontFamily: 'Varela',
                                 fontSize: 14.0)),
                         Padding(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child:
                                 Container(color: Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
@@ -96,24 +96,24 @@ class _MyHomePageState extends State<MyHomePage> {
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   if (!gleinfo.added) ...[
-                                    Icon(Icons.shopping_basket,
+                                    const Icon(Icons.shopping_basket,
                                         color: Color(0xFFD17E50), size: 12.0),
-                                    Text('Add to cart',
+                                    const Text('Add to cart',
                                         style: TextStyle(
                                             fontFamily: 'Varela',
                                             color: Color(0xFFD17E50),
                                             fontSize: 12.0))
                                   ],
                                   if (gleinfo.added) ...[
-                                    Icon(Icons.remove_circle_outline,
+                                    const Icon(Icons.remove_circle_outline,
                                         color: Color(0xFFD17E50), size: 12.0),
-                                    Text('3',
+                                    const Text('3',
                                         style: TextStyle(
                                             fontFamily: 'Varela',
                                             color: Color(0xFFD17E50),
                                             fontWeight: FontWeight.bold,
                                             fontSize: 12.0)),
-                                    Icon(Icons.add_circle_outline,
+                                    const Icon(Icons.add_circle_outline,
                                         color: Color(0xFFD17E50), size: 12.0),
                                   ]
                                 ]))
@@ -135,10 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: const Color(0xFFFCFAF8),
       body: ListView(
         children: <Widget>[
-          SizedBox(height: 5.0),
+          const SizedBox(height: 5.0),
           Container(
-            margin: EdgeInsets.all(15),
-            padding: EdgeInsets.symmetric(horizontal: 15),
+            margin: const EdgeInsets.all(15),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             height: 50,
             decoration: BoxDecoration(
               color: Colors.white,
@@ -146,31 +146,31 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             child: Row(
               children: [
-                Icon(Icons.search),
+                const Icon(Icons.search),
                 Container(
-                  margin: EdgeInsets.only(left: 10),
+                  margin: const EdgeInsets.only(left: 10),
                   width: 198,
                   child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       hintText: "Rechercher ici...",
                       border: InputBorder.none,
                     ),
                   ),
                 ),
-                Spacer(),
-                Icon(Icons.filter_list),
+                const Spacer(),
+                const Icon(Icons.filter_list),
               ],
             ),
           ),
           Container(
               //padding: EdgeInsets.symmetric(vertical: 5),
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               width: MediaQuery.of(context).size.width - 30.0,
               height: MediaQuery.of(context).size.height - 50.0,
 
                        child: GridView.count(
                 physics:
-                BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                 childAspectRatio: 0.815,
                 crossAxisCount: 2,
                 shrinkWrap: true,
@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: movieOscar,
           ),
             ),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
         ],
       ),
     );

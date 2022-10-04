@@ -44,24 +44,24 @@ class _CategoryState extends State<Category>
         ],
       ),*/
       body: ListView(
-        physics: NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.only(left: 20.0),
-        children: <Widget>[
-          SizedBox(height: 15.0),
-          Text('Categories',
+        physics: const NeverScrollableScrollPhysics(),
+        padding: const EdgeInsets.only(left: 20.0),
+        children:  <Widget>[
+          const SizedBox(height: 15.0),
+          const Text('Categories',
               style: TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold)),
-          SizedBox(height: 15.0),
+          const SizedBox(height: 15.0),
           TabBar(
               controller: _tabController,
               indicatorColor: Colors.transparent,
-              labelColor: Color(0xFFC88D67),
+              labelColor: const Color(0xFFC88D67),
               isScrollable: true,
-              labelPadding: EdgeInsets.only(right: 45.0),
-              unselectedLabelColor: Color(0xFFCDCDCD),
-              tabs: [
+              labelPadding: const EdgeInsets.only(right: 45.0),
+              unselectedLabelColor: const Color(0xFFCDCDCD),
+              tabs: const [
                 Tab(
                   child: Text('Cookies',
                       style: TextStyle(
