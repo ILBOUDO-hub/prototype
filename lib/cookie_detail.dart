@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prototype/bottom_bar.dart';
 import 'package:prototype/galerie.dart';
 import 'package:prototype/models/Product.dart';
+import 'package:prototype/screens/parametres/favoris.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -62,38 +63,51 @@ class CookieDetail extends StatelessWidget {
         ),
         SizedBox(height: 10.0),
         Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(cookiename,
-                  style: TextStyle(
-                      color: Color(0xFF575E67),
-                      fontFamily: 'Varela',
-                      fontSize: 24.0)),
+          
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(cookiename,
+                    style: TextStyle(
+                        color: Color(0xFF575E67),
+                        fontFamily: 'Varela',
+                        fontSize: 24.0)),
         IconButton(
-          icon: Icon(Icons.account_circle),
-          onPressed: (() {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => Galerie(
-                    assetPath: assetPath,
-                    cookieprice: cookieprice,
-                    cookiename: cookiename,
-                    cookieauteur: cookieauteur)));
-          }),
+            icon: Icon(Icons.account_circle),
+            onPressed: (() {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Galerie(
+                      assetPath: assetPath,
+                      cookieprice: cookieprice,
+                      cookiename: cookiename,
+                      cookieauteur: cookieauteur)));
+            }),
         ),
-                IconButton(
-          icon: Icon(Icons.share),
-          onPressed: (() {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => Galerie(
-                    assetPath: assetPath,
-                    cookieprice: cookieprice,
-                    cookiename: cookiename,
-                    cookieauteur: cookieauteur)));
-          }),
+                  IconButton(
+            icon: Icon(Icons.favorite_border),
+            onPressed: (() {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext context) {
+                  return Favoris();
+                })); 
+            }),
+        ),
+                  IconButton(
+            icon: Icon(Icons.share),
+            onPressed: (() {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => Galerie(
+                      assetPath: assetPath,
+                      cookieprice: cookieprice,
+                      cookiename: cookiename,
+                      cookieauteur: cookieauteur)));
+            }),
         )
 
-            ],
+              ],
+            ),
           ),
         ),
                 SizedBox(height: 10.0),
