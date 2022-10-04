@@ -5,6 +5,7 @@ import 'package:prototype/screens/annonces.dart';
 
 import 'package:prototype/home.dart';
 import 'package:prototype/screens/message.dart';
+import 'package:prototype/screens/parametres/favoris.dart';
 import 'package:prototype/screens/profile.dart';
 
 
@@ -55,7 +56,12 @@ class _BottomNavbarState extends State<BottomNavbar> {
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.favorite_sharp),
-            onPressed: () {},
+            onPressed: () {
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (BuildContext context) {
+                  return Favoris();
+                })); 
+            },
           ),
         ],
       ),
