@@ -30,26 +30,6 @@ class _InfosState extends State<Infos> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          /*  appBar: AppBar(
-        //  brightness: Brightness.light,
-          backgroundColor: Colors.brown,
-          elevation: 50,
-          centerTitle: true,
-        //  shadowColor: Colors.black.withOpacity(.5),
-          title: Text('Mes informations',
-              style: TextStyle(
-                  color: Colors.white.withOpacity(.7),
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1)),
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black.withOpacity(.8),
-            ),
-            onPressed: () => Navigator.maybePop(context),
-          ),
-        ), */
-
           appBar: AppBar(
             title: const Text('Mes informations'),
             centerTitle: true,
@@ -116,7 +96,7 @@ class _InfosState extends State<Infos> {
                   FloatingActionButton(
                     child: Icon(
                       Icons.camera_alt,
-                      size: 50,
+                      size: 50.0,
                       color: Colors.black,
                     ),
                     backgroundColor: Colors.white,

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:prototype/screens/categories/produit_detail.dart';
 import 'package:prototype/models/Product.dart';
 
-class Favoris extends StatefulWidget {
+class Appareil extends StatefulWidget {
   @override
-  State<Favoris> createState() => _FavorisState();
+  State<Appareil> createState() => _AppareilState();
 }
 
-class _FavorisState extends State<Favoris> {
+class _AppareilState extends State<Appareil> {
   List<Card> movieOscar = [];
 
   buildList() async {
@@ -15,8 +15,9 @@ class _FavorisState extends State<Favoris> {
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
       final String nameposter = gleinfo.name;
-      if (gleinfo.isFavorite == true) {
-        //final String categorieposter = gleinfo.name;
+      final String cookiecategorie = gleinfo.categorie;
+      //final String categorieposter = gleinfo.name;
+      if (cookiecategorie == "appareil") {
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
         final String imageposter = gleinfo.imgPath;
@@ -25,7 +26,7 @@ class _FavorisState extends State<Favoris> {
         movieOscar.add(Card(
           child: Padding(
               padding:
-                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+                  EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
               //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
@@ -71,7 +72,7 @@ class _FavorisState extends State<Favoris> {
                                         image: AssetImage(gleinfo.imgPath),
                                         fit: BoxFit.contain)))),
                         const SizedBox(height: 7.0),
-                        Text("\$$priceposter",
+                        Text("$priceposter FCFA",
                             style: const TextStyle(
                                 color: Color(0xFFCC8053),
                                 fontFamily: 'Varela',
@@ -84,7 +85,7 @@ class _FavorisState extends State<Favoris> {
                         Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                                color: const Color(0xFFEBEBEB), height: 1.0)),
+                                color: Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
                             padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                             child: Row(
@@ -129,32 +130,15 @@ class _FavorisState extends State<Favoris> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFFCFAF8),
-                appBar: AppBar(
-            title: const Text('Mes favoris'),
-            centerTitle: true,
-            titleTextStyle: const TextStyle(
-                fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
-            backgroundColor: Colors.brown,
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back,
-                color: Colors.white,
-              ),
-              onPressed: () => Navigator.maybePop(context),
-            ),
-          ),
       body: ListView(
         children: <Widget>[
-          const SizedBox(height: 5.0),
-
+          const SizedBox(height: 15.0),
           Container(
-            //padding: EdgeInsets.symmetric(vertical: 5),
-            margin: const EdgeInsets.all(10.0),
+            padding: const EdgeInsets.only(right: 17.0),
             width: MediaQuery.of(context).size.width - 30.0,
             height: MediaQuery.of(context).size.height - 50.0,
-
             child: GridView.count(
-              physics: const BouncingScrollPhysics(
+              physics:const  BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics()),
               childAspectRatio: 0.815,
               crossAxisCount: 2,
@@ -163,7 +147,7 @@ class _FavorisState extends State<Favoris> {
               children: movieOscar,
             ),
           ),
-          const SizedBox(height: 15.0),
+          const SizedBox(height: 15.0)
         ],
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/galerie.dart';
+import 'package:prototype/screens/galerie.dart';
 import 'package:prototype/models/Product.dart';
 import 'package:prototype/screens/parametres/favoris.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
@@ -53,7 +53,7 @@ class CookieDetail extends StatelessWidget {
                 height: 150.0, width: 100.0, fit: BoxFit.contain)),
         const SizedBox(height: 20.0),
         Center(
-          child: Text("\$$cookieprices",
+          child: Text("$cookieprices FCFA",
               style: const TextStyle(
                   fontFamily: 'Varela',
                   fontSize: 22.0,

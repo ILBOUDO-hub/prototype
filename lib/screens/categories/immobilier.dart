@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/cookie_detail.dart';
+import 'package:prototype/screens/categories/produit_detail.dart';
 import 'package:prototype/models/Product.dart';
 
-class Accessoire extends StatefulWidget {
+class Immobilier extends StatefulWidget {
   @override
-  State<Accessoire> createState() => _AccessoireState();
+  State<Immobilier> createState() => _ImmobilierState();
 }
 
-class _AccessoireState extends State<Accessoire> {
+class _ImmobilierState extends State<Immobilier> {
   List<Card> movieOscar = [];
 
   buildList() async {
@@ -17,7 +17,7 @@ class _AccessoireState extends State<Accessoire> {
       final String nameposter = gleinfo.name;
       final String cookiecategorie = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (cookiecategorie == "accessoire") {
+      if (cookiecategorie == "voiture") {
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
         final String imageposter = gleinfo.imgPath;
@@ -25,8 +25,8 @@ class _AccessoireState extends State<Accessoire> {
 
         movieOscar.add(Card(
           child: Padding(
-              padding:
-                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+              padding: const EdgeInsets.only(
+                  top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
               //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
@@ -65,14 +65,15 @@ class _AccessoireState extends State<Accessoire> {
                         Hero(
                             tag: gleinfo.imgPath,
                             child: Container(
-                                height: 75.0,
-                                width: 75.0,
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage(gleinfo.imgPath),
-                                        fit: BoxFit.contain)))),
+                              height: 75.0,
+                              width: 75.0,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(gleinfo.imgPath),
+                                      fit: BoxFit.contain)),
+                            )),
                         const SizedBox(height: 7.0),
-                        Text("\$$priceposter",
+                        Text("$priceposter FCFA",
                             style: const TextStyle(
                                 color: Color(0xFFCC8053),
                                 fontFamily: 'Varela',
@@ -87,7 +88,8 @@ class _AccessoireState extends State<Accessoire> {
                             child: Container(
                                 color: const Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
-                            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                            padding:
+                                const EdgeInsets.only(left: 5.0, right: 5.0),
                             child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -134,15 +136,16 @@ class _AccessoireState extends State<Accessoire> {
         children: <Widget>[
           const SizedBox(height: 15.0),
           Container(
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 17.0),
             width: MediaQuery.of(context).size.width - 30.0,
             height: MediaQuery.of(context).size.height - 50.0,
             child: GridView.count(
-              physics:const BouncingScrollPhysics(
+              physics: const BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics()),
               childAspectRatio: 0.815,
               crossAxisCount: 2,
               shrinkWrap: true,
+              primary: true,
               //movieOscar qui liste les articles
               children: movieOscar,
             ),

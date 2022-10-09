@@ -215,9 +215,9 @@ List<Product> products = [
 ];
 
 class Gateau {
-  final String name, auteur, imgPath, categorie,context;
-  final double price;
-  final bool added, isFavorite;
+  late String name, auteur, imgPath, categorie, context;
+  double price;
+  bool added, isFavorite;
 
   Gateau({
     required this.name,
@@ -229,6 +229,17 @@ class Gateau {
     required this.added,
     required this.isFavorite,
   });
+
+  Gateau.fromMap(Map<String, dynamic> data, this.price, this.added, this.isFavorite) {
+    name = data['name'];
+    auteur = data['auteur'];
+    categorie = data['categorie'];
+    price = data['price'];
+    imgPath = data['imgPath'];
+    context = data['context'];
+    added = data['added'];
+    isFavorite = data['isFavorite'];
+  }
 }
 
 List<Gateau> gateau = [
@@ -237,124 +248,189 @@ List<Gateau> gateau = [
     auteur: "Auguste",
     categorie: "mode",
     isFavorite: false,
-    price: 3.99,
+    price: 399,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/cookiemint.jpg",
   ),
-
-    Gateau(
+  Gateau(
     name: "Cookie cream",
-        auteur: "Auguste I",
+    auteur: "Auguste I",
     categorie: "mode",
     isFavorite: true,
-    price: 5.99,
+    price: 599,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/cookiecream.jpg",
   ),
-
-      Gateau(
+  Gateau(
     name: "Cookie classic",
-        auteur: "Auguste",
+    auteur: "Auguste",
     categorie: "mode",
     isFavorite: true,
-    price: 1.99,
+    price: 199,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/cookieclassic.jpg",
   ),
-
-      Gateau(
+  Gateau(
     name: "Cookie choco",
-        auteur: "Brice",
+    auteur: "Brice",
     categorie: "mode",
     isFavorite: false,
-    price: 2.99,
+    price: 299,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/cookiechoco.jpg",
   ),
-
-        Gateau(
+  Gateau(
     name: "Manette",
-        auteur: "Lebian",
+    auteur: "Lebian",
     categorie: "appareil",
     isFavorite: true,
-    price: 2.99,
+    price: 29000,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath:  "assets/categories/pc_5.png",
+    imgPath: "assets/categories/pc_5.png",
   ),
-
-        Gateau(
+  Gateau(
     name: "PS4",
-        auteur: "Eleazar",
+    auteur: "Eleazar",
     categorie: "appareil",
     isFavorite: false,
-    price: 2.99,
+    price: 50000,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/categories/pc_1.png",
   ),
-
-          Gateau(
+  Gateau(
+    name: "PS4",
+    auteur: "Eleazar",
+    categorie: "appareil",
+    isFavorite: false,
+    price: 34000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/pc_7.png",
+  ),
+  Gateau(
+    name: "Manette",
+    auteur: "Eleazar",
+    categorie: "appareil",
+    isFavorite: false,
+    price: 32000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/pc_3.png",
+  ),
+  Gateau(
+    name: "PS4-Profile",
+    auteur: "Eleazar",
+    categorie: "appareil",
+    isFavorite: true,
+    price: 29000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/pc_4.png",
+  ),
+  Gateau(
     name: "Dolce Gabana",
-        auteur: "Eleazar",
+    auteur: "Eleazar",
     categorie: "accessoire",
     isFavorite: false,
-    price: 2.99,
+    price: 34000,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/categories/bag_2.png",
   ),
-
-          Gateau(
+  Gateau(
     name: "Christian Dior",
-        auteur: "Brice",
+    auteur: "Brice",
     categorie: "accessoire",
     isFavorite: true,
-    price: 2.99,
+    price: 15000,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/categories/bag_5.png",
   ),
-
-
-            Gateau(
+  Gateau(
+    name: "Sac à main",
+    auteur: "Brice",
+    categorie: "accessoire",
+    isFavorite: true,
+    price: 59000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/bag_6.png",
+  ),
+  Gateau(
     name: "Audi A8",
-        auteur: "Roch",
+    auteur: "Roch",
     categorie: "voiture",
     isFavorite: false,
-    price: 2.99,
+    price: 2999000,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/images/ferrari4.jpg",
   ),
-
-            Gateau(
+  Gateau(
     name: "Lamborghini",
-        auteur: "Waly",
+    auteur: "Waly",
     categorie: "voiture",
     isFavorite: true,
-    price: 2.99,
+    price: 3000000,
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/images/ford4.jpg",
   ),
+  Gateau(
+    name: "FORD",
+    auteur: "Waly",
+    categorie: "voiture",
+    isFavorite: true,
+    price: 1850000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/7.jpg",
+  ),
+  Gateau(
+    name: "BMW",
+    auteur: "Waly",
+    categorie: "voiture",
+    isFavorite: true,
+    price: 2900000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/8.jpg",
+  ),
+  Gateau(
+    name: "BMW",
+    auteur: "Waly",
+    categorie: "voiture",
+    isFavorite: false,
+    price: 1500000,
+    added: true,
+    context:
+        "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
+    imgPath: "assets/categories/2.jpg",
+  ),
 ];
-
-
 
 class Cake {
   final String name, imgPath, context;
@@ -372,7 +448,7 @@ class Cake {
 }
 
 List<Cake> cake = [
-    Cake(
+  Cake(
     name: "Cookie classic",
     isFavorite: false,
     price: 1.99,
@@ -400,7 +476,6 @@ List<Cake> cake = [
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
     imgPath: "assets/cookiemint.jpg",
   ),
-
   Cake(
     name: "Cookie choco",
     isFavorite: false,

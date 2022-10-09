@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/cookie_detail.dart';
+import 'package:prototype/screens/categories/produit_detail.dart';
 import 'package:prototype/models/Product.dart';
 
 class Galerie extends StatefulWidget {
@@ -78,7 +78,7 @@ class _GalerieState extends State<Galerie> {
                                           image: AssetImage(gleinfo.imgPath),
                                           fit: BoxFit.contain)))),
                           const SizedBox(height: 3.0),
-                          Text("\$$priceposter",
+                          Text("$priceposter FCFA",
                               style: const TextStyle(
                                   color: Color(0xFFCC8053),
                                   fontFamily: 'Varela',
@@ -131,41 +131,8 @@ class _GalerieState extends State<Galerie> {
   void initState() {
     super.initState();
     buildList();
-    /*String auteurposter = "d"; 
-    auteurposter == widget.cookieauteur;*/
-    //build();
   }
-/*
-  @override
-  //final assetPath, cookieprice, cookiename;
-  //Galerie({this.assetPath, this.cookieprice, this.cookiename});
-  Widget build(BuildContext) {
-    return Scaffold(
-      backgroundColor: const Color(0xFFFCFAF8),
-      body: ListView(
-        children: <Widget>[
-          Text(widget.cookiename),
-          SizedBox(height: 15.0),
-          Container(
-            padding: EdgeInsets.only(right: 15.0),
-            width: MediaQuery.of(context).size.width - 30.0,
-            height: MediaQuery.of(context).size.height - 50.0,
-            child: GridView.count(
-              physics: BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics()),
-              childAspectRatio: 0.815,
-              crossAxisCount: 2,
-              shrinkWrap: true,
-              //movieOscar qui liste les articles
-              children: movieOscar,
-            ),
-          ),
-          SizedBox(height: 15.0)
-        ],
-      ),
-    );
-  }
-}*/
+
 
   @override
   Widget build(BuildContext context) {
@@ -343,7 +310,6 @@ class _GalerieState extends State<Galerie> {
                         ),
                         const SizedBox(height: 15.0),
                         Container(
-                          padding: const EdgeInsets.only(right: 15.0),
                           width: MediaQuery.of(context).size.width - 30.0,
                           height: MediaQuery.of(context).size.height - 50.0,
                           child: GridView.count(
@@ -367,44 +333,6 @@ class _GalerieState extends State<Galerie> {
               ),
             ])),
       ),
-
-      /*   
-      Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Container(
-                height: 10,
-              ),
-              categoriesWidget(),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                height: 50,
-                width: 200,
-                color: Color.fromARGB(255, 189, 132, 110),
-                padding: EdgeInsets.all(10),
-                child: Text(
-                  'Les articles',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                //Le Widget qui permet l'affichage de tous les articles dans le Home_screen
-                child: GridView.count(
-                  childAspectRatio: 0.815,
-                  crossAxisCount: 2,
-                  shrinkWrap: true,
-                  //movieOscar qui liste les articles
-                  children: movieOscar,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),*/
     );
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/accessoire.dart';
-import 'package:prototype/appareil.dart';
-import 'package:prototype/cookie_page.dart';
-import 'package:prototype/cake_page.dart';
+import 'package:prototype/screens/categories/appareil.dart';
+import 'package:prototype/screens/categories/engins.dart';
+import 'package:prototype/screens/categories/immobilier.dart';
+import 'package:prototype/screens/categories/accessoire.dart';
+import 'package:prototype/screens/categories/Promo.dart';
 
 
 class Category extends StatefulWidget {
@@ -17,7 +18,7 @@ class _CategoryState extends State<Category>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -63,7 +64,7 @@ class _CategoryState extends State<Category>
               unselectedLabelColor: const Color(0xFFCDCDCD),
               tabs: const [
                 Tab(
-                  child: Text('Cookies',
+                  child: Text('Promo',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
@@ -77,7 +78,7 @@ class _CategoryState extends State<Category>
                       )),
                 ),
                 Tab(
-                  child: Text('Voiture',
+                  child: Text('Engins',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
@@ -85,6 +86,13 @@ class _CategoryState extends State<Category>
                 ),
                 Tab(
                   child: Text('Appareils',
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 21.0,
+                      )),
+                ),
+                                Tab(
+                  child: Text('Immobilier',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
@@ -97,10 +105,11 @@ class _CategoryState extends State<Category>
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    CookiePage(),
+                    Promo(),
                     Accessoire(),
-                    CakePage(),
+                    Engins(),
                     Appareil(),
+                    Immobilier()
                   ]
                 )
               )

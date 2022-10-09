@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/cookie_detail.dart';
+import 'package:prototype/screens/categories/produit_detail.dart';
 import 'package:prototype/models/Product.dart';
 
-class CookiePage extends StatefulWidget {
+class Engins extends StatefulWidget {
   @override
-  State<CookiePage> createState() => _CookiePageState();
+  State<Engins> createState() => _EnginsState();
 }
 
-class _CookiePageState extends State<CookiePage> {
+class _EnginsState extends State<Engins> {
   List<Card> movieOscar = [];
 
   buildList() async {
@@ -17,7 +17,7 @@ class _CookiePageState extends State<CookiePage> {
       final String nameposter = gleinfo.name;
       final String cookiecategorie = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (cookiecategorie == "mode") {
+      if (cookiecategorie == "voiture") {
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
         final String imageposter = gleinfo.imgPath;
@@ -25,8 +25,8 @@ class _CookiePageState extends State<CookiePage> {
 
         movieOscar.add(Card(
           child: Padding(
-              padding:
-                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+              padding: const EdgeInsets.only(
+                  top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
               //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
@@ -73,7 +73,7 @@ class _CookiePageState extends State<CookiePage> {
                                       fit: BoxFit.contain)),
                             )),
                         const SizedBox(height: 7.0),
-                        Text("\$$priceposter",
+                        Text("$priceposter FCFA",
                             style: const TextStyle(
                                 color: Color(0xFFCC8053),
                                 fontFamily: 'Varela',
@@ -88,7 +88,8 @@ class _CookiePageState extends State<CookiePage> {
                             child: Container(
                                 color: const Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
-                            padding: const EdgeInsets.only(left: 5.0, right: 5.0),
+                            padding:
+                                const EdgeInsets.only(left: 5.0, right: 5.0),
                             child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
@@ -135,7 +136,7 @@ class _CookiePageState extends State<CookiePage> {
         children: <Widget>[
           const SizedBox(height: 15.0),
           Container(
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 17.0),
             width: MediaQuery.of(context).size.width - 30.0,
             height: MediaQuery.of(context).size.height - 50.0,
             child: GridView.count(
@@ -144,6 +145,7 @@ class _CookiePageState extends State<CookiePage> {
               childAspectRatio: 0.815,
               crossAxisCount: 2,
               shrinkWrap: true,
+              primary: true,
               //movieOscar qui liste les articles
               children: movieOscar,
             ),

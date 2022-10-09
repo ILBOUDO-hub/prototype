@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:prototype/cookie_detail.dart';
+import 'package:prototype/screens/categories/produit_detail.dart';
 import 'package:prototype/models/Product.dart';
 
-class Appareil extends StatefulWidget {
+class Accessoire extends StatefulWidget {
   @override
-  State<Appareil> createState() => _AppareilState();
+  State<Accessoire> createState() => _AccessoireState();
 }
 
-class _AppareilState extends State<Appareil> {
+class _AccessoireState extends State<Accessoire> {
   List<Card> movieOscar = [];
 
   buildList() async {
@@ -17,7 +17,7 @@ class _AppareilState extends State<Appareil> {
       final String nameposter = gleinfo.name;
       final String cookiecategorie = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (cookiecategorie == "appareil") {
+      if (cookiecategorie == "accessoire") {
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
         final String imageposter = gleinfo.imgPath;
@@ -26,7 +26,7 @@ class _AppareilState extends State<Appareil> {
         movieOscar.add(Card(
           child: Padding(
               padding:
-                  EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
               //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
@@ -52,7 +52,7 @@ class _AppareilState extends State<Appareil> {
                           color: Colors.white),
                       child: Column(children: [
                         Padding(
-                            padding: EdgeInsets.all(5.0),
+                            padding: const EdgeInsets.all(5.0),
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -72,7 +72,7 @@ class _AppareilState extends State<Appareil> {
                                         image: AssetImage(gleinfo.imgPath),
                                         fit: BoxFit.contain)))),
                         const SizedBox(height: 7.0),
-                        Text("\$$priceposter",
+                        Text("$priceposter FCFA",
                             style: const TextStyle(
                                 color: Color(0xFFCC8053),
                                 fontFamily: 'Varela',
@@ -85,7 +85,7 @@ class _AppareilState extends State<Appareil> {
                         Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                                color: Color(0xFFEBEBEB), height: 1.0)),
+                                color: const Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
                             padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                             child: Row(
@@ -134,11 +134,11 @@ class _AppareilState extends State<Appareil> {
         children: <Widget>[
           const SizedBox(height: 15.0),
           Container(
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: const EdgeInsets.only(right: 17.0),
             width: MediaQuery.of(context).size.width - 30.0,
             height: MediaQuery.of(context).size.height - 50.0,
             child: GridView.count(
-              physics:const  BouncingScrollPhysics(
+              physics:const BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics()),
               childAspectRatio: 0.815,
               crossAxisCount: 2,

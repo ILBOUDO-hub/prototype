@@ -26,6 +26,7 @@ class _PageProfileSate extends State<PageProfile> {
             ),
             const SizedBox(height: 5),
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                                     style: ButtonStyle(
@@ -51,6 +52,7 @@ class _PageProfileSate extends State<PageProfile> {
                     )),
             ),
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                                     style: ButtonStyle(
@@ -76,6 +78,7 @@ class _PageProfileSate extends State<PageProfile> {
                     )),
             ),
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                                     style: ButtonStyle(
@@ -101,6 +104,7 @@ class _PageProfileSate extends State<PageProfile> {
                     )),
             ),            
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                                     style: ButtonStyle(
@@ -123,6 +127,7 @@ class _PageProfileSate extends State<PageProfile> {
                     )),
             ),
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                                     style: ButtonStyle(
@@ -145,6 +150,7 @@ class _PageProfileSate extends State<PageProfile> {
                     )),
             ),
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                       style: ButtonStyle(
@@ -161,12 +167,13 @@ class _PageProfileSate extends State<PageProfile> {
                     child: Row(
                       children: [
                         const Icon(Icons.login_rounded ,color: Colors.black,),
-                        CustomText('  Connexion et déconnexion',
+                        CustomText('  LogIn & LogOut',
                             color: Colors.black, factor: 1.5),
                       ],
                     )),
             ),
             Card(
+              margin: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 5.0),
               elevation: 2.0,
                 child: ElevatedButton(
                     style: ButtonStyle(
