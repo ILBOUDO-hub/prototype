@@ -248,6 +248,7 @@ class _InfosState extends State<Infos> {
                   height: 20,
                 ),
                 FloatingActionButton.extended(
+                  heroTag: "anonymous",
                   extendedPadding: const EdgeInsets.all(100.0),
                   label: const Text(
                     'Valider',

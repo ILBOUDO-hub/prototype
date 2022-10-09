@@ -19,9 +19,7 @@ class _AccessoireState extends State<Accessoire> {
       //final String categorieposter = gleinfo.name;
       if (cookiecategorie == "accessoire") {
         final String priceposter = gleinfo.price.toString();
-        //final String priceposter = gleinfo.price as String;
-        final String imageposter = gleinfo.imgPath;
-        int pourcent = 85 + i;
+      
 
         movieOscar.add(Card(
           child: Padding(
@@ -32,7 +30,8 @@ class _AccessoireState extends State<Accessoire> {
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => CookieDetail(
-                            assetPath: gleinfo.imgPath,
+                            assetPath1: gleinfo.imgPath1,
+                            assetPath2: gleinfo.imgPath2,
                             cookieprice: gleinfo.price,
                             cookiename: gleinfo.name,
                             cookieauteur: gleinfo.auteur,
@@ -63,13 +62,13 @@ class _AccessoireState extends State<Accessoire> {
                                           color: Color(0xFFEF7532))
                                 ])),
                         Hero(
-                            tag: gleinfo.imgPath,
+                            tag: gleinfo.imgPath1,
                             child: Container(
                                 height: 75.0,
                                 width: 75.0,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(gleinfo.imgPath),
+                                        image: AssetImage(gleinfo.imgPath1),
                                         fit: BoxFit.contain)))),
                         const SizedBox(height: 7.0),
                         Text("$priceposter FCFA",

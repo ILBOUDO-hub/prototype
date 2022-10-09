@@ -215,7 +215,7 @@ List<Product> products = [
 ];
 
 class Gateau {
-  late String name, auteur, imgPath, categorie, context;
+  late String name, auteur, imgPath1,imgPath2, categorie, context;
   double price;
   bool added, isFavorite;
 
@@ -224,7 +224,8 @@ class Gateau {
     required this.auteur,
     required this.categorie,
     required this.price,
-    required this.imgPath,
+    required this.imgPath1,
+    required this.imgPath2,
     required this.context,
     required this.added,
     required this.isFavorite,
@@ -235,7 +236,7 @@ class Gateau {
     auteur = data['auteur'];
     categorie = data['categorie'];
     price = data['price'];
-    imgPath = data['imgPath'];
+    imgPath1 = data['imgPath1'];
     context = data['context'];
     added = data['added'];
     isFavorite = data['isFavorite'];
@@ -252,7 +253,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/cookiemint.jpg",
+    imgPath1: "assets/cookiemint.jpg",
+    imgPath2: "assets/cookiemint.jpg",
   ),
   Gateau(
     name: "Cookie cream",
@@ -263,7 +265,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/cookiecream.jpg",
+    imgPath1: "assets/cookiecream.jpg",
+    imgPath2: "assets/cookiecream.jpg",
   ),
   Gateau(
     name: "Cookie classic",
@@ -274,7 +277,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/cookieclassic.jpg",
+    imgPath1: "assets/cookieclassic.jpg",
+    imgPath2: "assets/cookieclassic.jpg",
   ),
   Gateau(
     name: "Cookie choco",
@@ -285,7 +289,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/cookiechoco.jpg",
+    imgPath1: "assets/cookiechoco.jpg",
+    imgPath2: "assets/cookiechoco.jpg",
   ),
   Gateau(
     name: "Manette",
@@ -296,7 +301,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/pc_5.png",
+    imgPath1: "assets/categories/pc_5.png",
+    imgPath2: "assets/categories/pc_4.png",
   ),
   Gateau(
     name: "PS4",
@@ -307,7 +313,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/pc_1.png",
+    imgPath1: "assets/categories/pc_1.png",
+    imgPath2: "assets/categories/pc_3.png",
   ),
   Gateau(
     name: "PS4",
@@ -318,7 +325,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/pc_7.png",
+    imgPath1: "assets/categories/pc_7.png",
+    imgPath2: "assets/categories/pc_3.png",
   ),
   Gateau(
     name: "Manette",
@@ -329,7 +337,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/pc_3.png",
+    imgPath1: "assets/categories/pc_3.png",
+    imgPath2: "assets/categories/pc_7.png",
   ),
   Gateau(
     name: "PS4-Profile",
@@ -340,7 +349,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/pc_4.png",
+    imgPath1: "assets/categories/pc_4.png",
+    imgPath2: "assets/categories/pc_5.png",
   ),
   Gateau(
     name: "Dolce Gabana",
@@ -351,7 +361,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/bag_2.png",
+    imgPath1: "assets/categories/bag_2.png",
+    imgPath2: "assets/categories/bag_1.png",
   ),
   Gateau(
     name: "Christian Dior",
@@ -362,7 +373,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/bag_5.png",
+    imgPath1: "assets/categories/bag_5.png",
+    imgPath2: "assets/categories/bag_5.png",
   ),
   Gateau(
     name: "Sac à main",
@@ -373,7 +385,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/bag_6.png",
+    imgPath1: "assets/categories/bag_6.png",
+    imgPath2: "assets/categories/bag_6.png",
   ),
   Gateau(
     name: "Audi A8",
@@ -384,7 +397,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/images/ferrari4.jpg",
+    imgPath1: "assets/images/ferrari4.jpg",
+    imgPath2: "assets/images/ferrari4.jpg",
   ),
   Gateau(
     name: "Lamborghini",
@@ -395,7 +409,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/images/ford4.jpg",
+    imgPath1: "assets/images/ford4.jpg",
+    imgPath2: "assets/images/ford4.jpg",
   ),
   Gateau(
     name: "FORD",
@@ -406,7 +421,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/7.jpg",
+    imgPath1: "assets/categories/7.jpg",
+    imgPath2: "assets/categories/7.jpg",
   ),
   Gateau(
     name: "BMW",
@@ -417,7 +433,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/8.jpg",
+    imgPath1: "assets/categories/8.jpg",
+    imgPath2: "assets/categories/8.jpg",
   ),
   Gateau(
     name: "BMW",
@@ -428,7 +445,8 @@ List<Gateau> gateau = [
     added: true,
     context:
         "Lorem Dolor set simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.",
-    imgPath: "assets/categories/2.jpg",
+    imgPath1: "assets/categories/2.jpg",
+    imgPath2: "assets/categories/2.jpg",
   ),
 ];
 

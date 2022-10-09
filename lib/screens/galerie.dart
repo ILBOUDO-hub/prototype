@@ -4,9 +4,9 @@ import 'package:prototype/models/Product.dart';
 
 class Galerie extends StatefulWidget {
   @override
-  final assetPath, cookieprice, cookiename, cookieauteur;
+  final assetPath1, assetPath2, cookieprice, cookiename, cookieauteur;
   Galerie(
-      {this.assetPath, this.cookieprice, this.cookiename, this.cookieauteur});
+      {this.assetPath1, this.assetPath2,this.cookieprice, this.cookiename, this.cookieauteur});
 
   State<Galerie> createState() => _GalerieState();
 }
@@ -28,7 +28,7 @@ class _GalerieState extends State<Galerie> {
         final String nameposter = gleinfo.name;
         final String priceposter = gleinfo.price.toString();
         //final String priceposter = gleinfo.price as String;
-        final String imageposter = gleinfo.imgPath;
+        final String imageposter = gleinfo.imgPath1;
         int pourcent = 85 + i;
 
         movieOscar.add(Card(
@@ -40,7 +40,8 @@ class _GalerieState extends State<Galerie> {
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => CookieDetail(
-                              assetPath: gleinfo.imgPath,
+                              assetPath1: gleinfo.imgPath1,
+                              assetPath2: gleinfo.imgPath2,
                               cookieprice: gleinfo.price,
                               cookiename: gleinfo.name,
                               cookieauteur: gleinfo.auteur,
@@ -69,13 +70,13 @@ class _GalerieState extends State<Galerie> {
                                             color: Color(0xFFEF7532))
                                   ])),
                           Hero(
-                              tag: gleinfo.imgPath,
+                              tag: gleinfo.imgPath1,
                               child: Container(
                                   height: 75.0,
                                   width: 75.0,
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
-                                          image: AssetImage(gleinfo.imgPath),
+                                          image: AssetImage(gleinfo.imgPath1),
                                           fit: BoxFit.contain)))),
                           const SizedBox(height: 3.0),
                           Text("$priceposter FCFA",

@@ -18,7 +18,7 @@ class _MyHomePageState extends State<MyHomePage> {
       //final String categorieposter = gleinfo.name;
       final String priceposter = gleinfo.price.toString();
       //final String priceposter = gleinfo.price as String;
-      final String imageposter = gleinfo.imgPath;
+      final String imageposter = gleinfo.imgPath1;
       int pourcent = 85 + i;
 
       movieOscar.add(Card(
@@ -30,7 +30,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => CookieDetail(
-                          assetPath: gleinfo.imgPath,
+                          assetPath1: gleinfo.imgPath1,
+                          assetPath2: gleinfo.imgPath2,
                           cookieprice: gleinfo.price,
                           cookiename: gleinfo.name,
                           cookieauteur: gleinfo.auteur,
@@ -61,13 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
                                         color: Color(0xFFEF7532))
                               ])),
                       Hero(
-                          tag: gleinfo.imgPath,
+                          tag: gleinfo.imgPath1,
                           child: Container(
                               height: 75.0,
                               width: 75.0,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage(gleinfo.imgPath),
+                                      image: AssetImage(gleinfo.imgPath1),
                                       fit: BoxFit.contain)))),
                       const SizedBox(height: 7.0),
                       Text("$priceposter FCFA",

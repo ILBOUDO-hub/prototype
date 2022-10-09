@@ -45,6 +45,9 @@ dependencies:
   url_launcher:
   whatsapp_unilink:
   chat_list: ^2.0.0
+  carousel_slider: ^4.0.0
+  flutter_image_slider: ^0.0.1
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:

@@ -19,20 +19,19 @@ class _AppareilState extends State<Appareil> {
       //final String categorieposter = gleinfo.name;
       if (cookiecategorie == "appareil") {
         final String priceposter = gleinfo.price.toString();
-        //final String priceposter = gleinfo.price as String;
-        final String imageposter = gleinfo.imgPath;
-        int pourcent = 85 + i;
+      
 
         movieOscar.add(Card(
           child: Padding(
               padding:
-                  EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
+                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
               //  if(name == "Cookie mint"){}
               child: InkWell(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => CookieDetail(
-                            assetPath: gleinfo.imgPath,
+                            assetPath1: gleinfo.imgPath1,
+                            assetPath2: gleinfo.imgPath2,
                             cookieprice: gleinfo.price,
                             cookiename: gleinfo.name,
                             cookieauteur: gleinfo.auteur,
@@ -52,7 +51,7 @@ class _AppareilState extends State<Appareil> {
                           color: Colors.white),
                       child: Column(children: [
                         Padding(
-                            padding: EdgeInsets.all(5.0),
+                            padding: const EdgeInsets.all(5.0),
                             child: Row(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
@@ -63,13 +62,13 @@ class _AppareilState extends State<Appareil> {
                                           color: Color(0xFFEF7532))
                                 ])),
                         Hero(
-                            tag: gleinfo.imgPath,
+                            tag: gleinfo.imgPath1,
                             child: Container(
                                 height: 75.0,
                                 width: 75.0,
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage(gleinfo.imgPath),
+                                        image: AssetImage(gleinfo.imgPath1),
                                         fit: BoxFit.contain)))),
                         const SizedBox(height: 7.0),
                         Text("$priceposter FCFA",
@@ -85,7 +84,7 @@ class _AppareilState extends State<Appareil> {
                         Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
-                                color: Color(0xFFEBEBEB), height: 1.0)),
+                                color: const Color(0xFFEBEBEB), height: 1.0)),
                         Padding(
                             padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                             child: Row(
@@ -138,7 +137,7 @@ class _AppareilState extends State<Appareil> {
             width: MediaQuery.of(context).size.width - 30.0,
             height: MediaQuery.of(context).size.height - 50.0,
             child: GridView.count(
-              physics:const  BouncingScrollPhysics(
+              physics:const BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics()),
               childAspectRatio: 0.815,
               crossAxisCount: 2,
