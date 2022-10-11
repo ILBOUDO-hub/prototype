@@ -92,7 +92,7 @@ class _CategoryState extends State<Category>
                       )),
                 ),
                                 Tab(
-                  child: Text('Immobilier',
+                  child: Text('Immobiliers',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,

@@ -29,10 +29,10 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: <Widget>[
               Container(
-                color: Colors.amber,
+                //color: Colors.amber,
                 //Hero responsable de l'affichage des details de chaque article
                 child: Hero(
-                    tag: gleinfo.name,
+                    tag: gleinfo.imgPath1,
                     child: Material(
                       child: InkWell(
                         //Le Inkwell retourne Showdetail avec les details des articles en parametres

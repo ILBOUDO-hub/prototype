@@ -29,7 +29,7 @@ class _AccessoireState extends State<Accessoire> {
             child: Column(
               children: <Widget>[
                 Container(
-                  color: Colors.amber,
+                  //color: Colors.amber,
                   //Hero responsable de l'affichage des details de chaque article
                   child: Hero(
                       tag: gleinfo.imgPath1,
