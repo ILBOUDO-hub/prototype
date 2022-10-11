@@ -14,31 +14,24 @@ class _FavorisState extends State<Favoris> {
     //BuildList recupere tous les articles a travers une boucle et les affiches dans un container
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
-      final String nameposter = gleinfo.name;
       if (gleinfo.isFavorite == true) {
         //final String categorieposter = gleinfo.name;
         final String priceposter = gleinfo.price.toString();
-        //final String priceposter = gleinfo.price as String;
-        final String imageposter = gleinfo.imgPath1;
-        int pourcent = 85 + i;
 
         movieOscar.add(Card(
           child: Padding(
               padding:
-                  const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
-              //  if(name == "Cookie mint"){}
+              const EdgeInsets.only(top: 0.0, bottom: 0.0, left: 5.0, right: 5.0),
               child: InkWell(
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => CookieDetail(
+                        builder: (context) => ProduitDetail(
                             assetPath1: gleinfo.imgPath1,
                             assetPath2: gleinfo.imgPath2,
                             cookieprice: gleinfo.price,
                             cookiename: gleinfo.name,
                             cookieauteur: gleinfo.auteur,
                             cookiecategorie: gleinfo.categorie)));
-
-                    //  );
                   },
                   child: Container(
                       decoration: BoxDecoration(

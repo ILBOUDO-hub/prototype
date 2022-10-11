@@ -19,10 +19,7 @@ class _GalerieState extends State<Galerie> {
     //BuildList recupere tous les articles a travers une boucle et les affiches dans un container
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
-      final String nameposter = gleinfo.name;
-      //final String cookieauteur = gleinfo.categorie;
-      //final String categorieposter = gleinfo.name;
-      if (gleinfo.categorie == "voiture") {
+      if (gleinfo.auteur == "Brice") { //Recupérer les postes des articles de l'utilisateur connecté
         final String priceposter = gleinfo.price.toString();
 
         movieOscar.add(Container(
@@ -30,6 +27,7 @@ class _GalerieState extends State<Galerie> {
           color: Color.fromARGB(255, 252, 252, 249),
           //  padding: EdgeInsets.all(8.0),
           child: Card(
+            //Card responsable de l'affichage de chaque article
             elevation: 1.0,
             child: Column(
               children: <Widget>[
@@ -43,7 +41,7 @@ class _GalerieState extends State<Galerie> {
                           //Le Inkwell retourne Showdetail avec les details des articles en parametres
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => CookieDetail(
+                                builder: (context) => ProduitDetail(
                                     assetPath1: gleinfo.imgPath1,
                                     assetPath2: gleinfo.imgPath2,
                                     cookieprice: gleinfo.price,
@@ -69,6 +67,7 @@ class _GalerieState extends State<Galerie> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     IconButton(
+                                      //Ici c'est le boutton qui permet de confirmer la suppression d'un article par un vendeur 
                                       onPressed: () async {
                                         final result = await showDialogAlert(
                                             context: context,

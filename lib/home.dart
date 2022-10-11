@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         //Le Inkwell retourne Showdetail avec les details des articles en parametres
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => CookieDetail(
+                              builder: (context) => ProduitDetail(
                                   assetPath1: gleinfo.imgPath1,
                                   assetPath2: gleinfo.imgPath2,
                                   cookieprice: gleinfo.price,

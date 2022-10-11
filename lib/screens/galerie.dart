@@ -46,7 +46,7 @@ class _GalerieState extends State<Galerie> {
                           //Le Inkwell retourne Showdetail avec les details des articles en parametres
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => CookieDetail(
+                                builder: (context) => ProduitDetail(
                                     assetPath1: gleinfo.imgPath1,
                                     assetPath2: gleinfo.imgPath2,
                                     cookieprice: gleinfo.price,
@@ -73,25 +73,26 @@ class _GalerieState extends State<Galerie> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
+                                          //widget pour montrer si un article est en solde
                                           gleinfo.isFavorite
                                               ? Container(
                                                   color: Colors.brown,
-                                                  child: Text("-Promo",
-                                                      style: const TextStyle(
+                                                  child: const Text("-Promo",
+                                                      style: TextStyle(
                                                           color: Colors.white,
                                                           fontFamily: 'Varela',
                                                           fontSize: 14.0)),
                                                 )
                                               : Container(
-                                                  child: Text(""),
+                                                  child: const Text(""),
                                                 )
                                         ])),
                                 Container(
                                   // Code pour le nombre de photo.
                                   width: 38,
                                   margin:
-                                      EdgeInsets.only(top: 60.0, left: 100.0),
-                                  padding: EdgeInsets.all(2),
+                                      const EdgeInsets.only(top: 60.0, left: 100.0),
+                                  padding: const EdgeInsets.all(2),
                                   decoration: BoxDecoration(
                                     color: Colors.white.withOpacity(.30),
                                     borderRadius: BorderRadius.circular(8),

@@ -1,27 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:prototype/screens/categories/edit.dart';
 import 'package:prototype/screens/galerie.dart';
 import 'package:prototype/screens/parametres/favoris.dart';
 import 'package:whatsapp_unilink/whatsapp_unilink.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:flutter_image_slider/carousel.dart';
 
-class CookieDetail extends StatelessWidget {
+class ProduitDetail extends StatelessWidget {
   final assetPath1,
       assetPath2,
       cookieauteur,
       cookieprice,
       cookiename,
       cookiecategorie;
+  //  isFavorite;
   final _controller = PageController();
 
-  CookieDetail(
-      {this.assetPath1,
-      this.assetPath2,
-      this.cookieauteur,
-      this.cookieprice,
-      this.cookiename,
-      this.cookiecategorie});
+  ProduitDetail({
+    this.assetPath1,
+    this.assetPath2,
+    this.cookieauteur,
+    this.cookieprice,
+    this.cookiename,
+    this.cookiecategorie,
+    //this.isFavorite
+  });
+
+  bool isPressed = true;
+  bool isPressed2 = true;
+  bool isHighlighted = true;
   @override
   Widget build(BuildContext context) {
     String cookieprices = cookieprice.toString();
@@ -135,15 +142,56 @@ class CookieDetail extends StatelessWidget {
                             cookieauteur: cookieauteur)));
                   }),
                 ),
-                IconButton(
-                  icon: const Icon(Icons.favorite_border),
-                  onPressed: (() {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return Favoris();
-                    }));
-                  }),
-                ),
+                /*InkWell(
+                  highlightColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  onHighlightChanged: (value) {
+                    setState(() {
+                      isHighlighted = !isHighlighted;
+                    });
+                  },
+                  onTap: () {
+                    setState(() {
+                      isPressed2 = !isPressed2;
+                    });
+                  },
+                  child: AnimatedContainer(
+                      margin: EdgeInsets.all(isHighlighted ? 0 : 25),
+                      height: isHighlighted ? 50 : 45,
+                      width: isHighlighted ? 50 : 45,
+                      curve: Curves.fastLinearToSlowEaseIn,
+                      duration: Duration(milliseconds: 300),
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.2),
+                            blurRadius: 20,
+                            offset: Offset(5, 10),
+                          )
+                        ],
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: isPressed2
+                          ? Icon(
+                              Icons.favorite_border,
+                              color: Colors.black.withOpacity(0.6),
+                            )
+                          : Icon(
+                              Icons.favorite,
+                              color: Colors.pink.withOpacity(1.0),
+                            )),
+                ),*/
+                cookieauteur != "Brice"
+                    ? IconButton(
+                        //Differnt de celui qui a posté qlors il peut aimer les articles
+                        icon: const Icon(Icons.favorite),
+                        onPressed: (() {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Favoris()));
+                        }),
+                      )
+                    : Container(),
                 IconButton(
                   icon: const Icon(Icons.share),
                   onPressed: (() {
@@ -155,7 +203,22 @@ class CookieDetail extends StatelessWidget {
                             cookiename: cookiename,
                             cookieauteur: cookieauteur)));
                   }),
-                )
+                ),
+                cookieauteur == "Brice"
+                    ? IconButton(
+                        //Celui qui a posté peut modifier son article et non les mettre en favoris
+                        icon: const Icon(Icons.edit),
+                  onPressed: (() {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => Edit(
+                            assetPath1: assetPath1,
+                            assetPath2: assetPath2,
+                            cookieprice: cookieprice,
+                            cookiename: cookiename,
+                            cookieauteur: cookieauteur)));
+                  }),
+                      )
+                    : Container(),
               ],
             ),
           ),
@@ -227,6 +290,8 @@ class CookieDetail extends StatelessWidget {
       ]),
     );
   }
+
+  void setState(Null Function() param0) {}
 }
 
 _makingPhoneCall() async {

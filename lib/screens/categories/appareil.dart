@@ -14,15 +14,13 @@ class _AppareilState extends State<Appareil> {
     //BuildList recupere tous les articles a travers une boucle et les affiches dans un container
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
-      final String nameposter = gleinfo.name;
       final String cookiecategorie = gleinfo.categorie;
-      //final String categorieposter = gleinfo.name;
       if (cookiecategorie == "appareil") {
         final String priceposter = gleinfo.price.toString();
 
         movieOscar.add(Container(
           //  width: 260,
-          color: Color.fromARGB(255, 252, 252, 249),
+          color: const Color.fromARGB(255, 252, 252, 249),
           //  padding: EdgeInsets.all(8.0),
           child: Card(
             elevation: 1.0,
@@ -38,7 +36,7 @@ class _AppareilState extends State<Appareil> {
                           //Le Inkwell retourne Showdetail avec les details des articles en parametres
                           onTap: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => CookieDetail(
+                                builder: (context) => ProduitDetail(
                                     assetPath1: gleinfo.imgPath1,
                                     assetPath2: gleinfo.imgPath2,
                                     cookieprice: gleinfo.price,
@@ -59,8 +57,8 @@ class _AppareilState extends State<Appareil> {
                             child: Container(
                               // Code pour le nombre de photo.
                               width: 38,
-                              margin: EdgeInsets.only(bottom: 4.0, right: 4.0),
-                              padding: EdgeInsets.all(2),
+                              margin: const EdgeInsets.only(bottom: 4.0, right: 4.0),
+                              padding:const EdgeInsets.all(2),
                               decoration: BoxDecoration(
                                 color: Colors.white.withOpacity(.30),
                                 borderRadius: BorderRadius.circular(8),
@@ -140,7 +138,7 @@ class _AppareilState extends State<Appareil> {
             width: MediaQuery.of(context).size.width - 30.0,
             height: MediaQuery.of(context).size.height - 50.0,
             child: GridView.count(
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               childAspectRatio: 0.815,
               crossAxisCount: 2,
               shrinkWrap: true,
