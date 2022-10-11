@@ -11,17 +11,17 @@ class Galerie extends StatefulWidget {
   State<Galerie> createState() => _GalerieState();
 }
 
-class _GalerieState extends State<Galerie> {
-   List<Container> movieOscar = [];
+class _GalerieState extends State<Galerie> { 
+  List<Container> movieOscar = [];
 
   buildList() async {
     //BuildList recupere tous les articles a travers une boucle et les affiches dans un container
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
       final String nameposter = gleinfo.name;
-      final String cookiecategorie = gleinfo.categorie;
+      //final String cookieauteur = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (cookiecategorie == "voiture") {
+      if (gleinfo.categorie == "voiture" ) {
         final String priceposter = gleinfo.price.toString();
 
         movieOscar.add(Container(
@@ -52,61 +52,74 @@ class _GalerieState extends State<Galerie> {
 
                             //  );
                           },
-         
-                              child: Container(
-                                height: 127,
-                                width: 250,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                        image: AssetImage(gleinfo.imgPath1),
-                                        fit: BoxFit.cover)),
-                                child: Column(
-                                  children: [
-                                                          Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                gleinfo.isFavorite
-                                    ? Container(
-                                      color: Colors.brown,
-                                      child: Text("-Promo",
-                                                                style: const TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Varela',
-                              fontSize: 14.0)),
-                                    )
-                                    : const Icon(Icons.favorite_border,
-                                        color: Color(0xFFEF7532))
-                              ])),
 
+                          child: Container(
+                            height: 127,
+                            width: 250,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: AssetImage(gleinfo.imgPath1),
+                                    fit: BoxFit.cover)),
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
                                     Container(
-                                      // Code pour le nombre de photo.
-                                      width: 38,
-                                      margin: EdgeInsets.only(top: 60.0, left: 100.0),
-                                      padding: EdgeInsets.all(2),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white.withOpacity(.30),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      child: Row(
-                                        children: const [
-                                          Text(
-                                            '2',
-                                            style: TextStyle(color: Colors.white),
-                                          ),
-                                          Icon(
-                                            Icons.camera,
-                                            color: Colors.white,
-                                          ),
-                                        ],
-                                      ),
+                                                  child: const Icon(
+              Icons.delete,
+              color: Colors.brown,
+            ),
                                     ),
+                                    Padding(
+                                        padding: const EdgeInsets.all(5.0),
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              gleinfo.isFavorite
+                                                  ? Container(
+                                                      color: Colors.brown,
+                                                      child: Text("-Promo",
+                                                          style: const TextStyle(
+                                                              color: Colors.white,
+                                                              fontFamily: 'Varela',
+                                                              fontSize: 14.0)),
+                                                    )
+                                                  : Container(
+                                                    child: Text(""),
+                                                  )
+                                            ])),
                                   ],
                                 ),
-                               // alignment: Alignment.bottomRight,
-                              ),
+                                Container(
+                                  // Code pour le nombre de photo.
+                                  width: 38,
+                                  margin:
+                                      EdgeInsets.only(top: 60.0, left: 100.0),
+                                  padding: EdgeInsets.all(2),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(.30),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Row(
+                                    children: const [
+                                      Text(
+                                        '2',
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                      Icon(
+                                        Icons.camera,
+                                        color: Colors.white,
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            // alignment: Alignment.bottomRight,
+                          ),
                         ),
                       )),
                 ),
@@ -154,7 +167,6 @@ class _GalerieState extends State<Galerie> {
     super.initState();
     buildList();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -208,10 +220,10 @@ class _GalerieState extends State<Galerie> {
                             const SizedBox(
                               height: 20,
                             ),
-                            const Text(
+                            Text(
                               "Brice",
                               //'Vendeur: $vendeur',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
@@ -282,7 +294,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 50,
                         width: double.infinity,
-                        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: const Text(
                           'Vente de tissus traditionnel et autres articles de mode.',
                           textAlign: TextAlign.justify,
@@ -295,7 +308,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 30,
                         width: double.infinity,
-                        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: const Text(
                           'Tel: +226 62825040',
                           textAlign: TextAlign.justify,
@@ -308,7 +322,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 50,
                         width: double.infinity,
-                        padding: const EdgeInsets.only(left: 15, right: 1, top: 5),
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 1, top: 5),
                         child: const Text(
                           'Localisation: Ouagadougou / Karpala',
                           textAlign: TextAlign.justify,

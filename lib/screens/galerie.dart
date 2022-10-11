@@ -6,7 +6,11 @@ class Galerie extends StatefulWidget {
   @override
   final assetPath1, assetPath2, cookieprice, cookiename, cookieauteur;
   Galerie(
-      {this.assetPath1, this.assetPath2,this.cookieprice, this.cookiename, this.cookieauteur});
+      {this.assetPath1,
+      this.assetPath2,
+      this.cookieprice,
+      this.cookiename,
+      this.cookieauteur});
 
   State<Galerie> createState() => _GalerieState();
 }
@@ -19,9 +23,9 @@ class _GalerieState extends State<Galerie> {
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
       final String nameposter = gleinfo.name;
-      final String cookiecategorie = gleinfo.categorie;
+      //final String cookieauteur = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (cookiecategorie == "voiture") {
+      if (widget.cookieauteur == gleinfo.auteur) {
         final String priceposter = gleinfo.price.toString();
 
         movieOscar.add(Container(
@@ -52,61 +56,63 @@ class _GalerieState extends State<Galerie> {
 
                             //  );
                           },
-         
-                              child: Container(
-                                height: 127,
-                                width: 250,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    image: DecorationImage(
-                                        image: AssetImage(gleinfo.imgPath1),
-                                        fit: BoxFit.cover)),
-                                child: Column(
-                                  children: [
-                                                          Padding(
-                          padding: const EdgeInsets.all(5.0),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.end,
-                              children: [
-                                gleinfo.isFavorite
-                                    ? Container(
-                                      color: Colors.brown,
-                                      child: Text("-Promo",
-                                                                style: const TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Varela',
-                              fontSize: 14.0)),
-                                    )
-                                    : const Icon(Icons.favorite_border,
-                                        color: Color(0xFFEF7532))
-                              ])),
 
-                                    Container(
-                                      // Code pour le nombre de photo.
-                                      width: 38,
-                                      margin: EdgeInsets.only(top: 60.0, left: 100.0),
-                                      padding: EdgeInsets.all(2),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white.withOpacity(.30),
-                                        borderRadius: BorderRadius.circular(8),
+                          child: Container(
+                            height: 127,
+                            width: 250,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                image: DecorationImage(
+                                    image: AssetImage(gleinfo.imgPath1),
+                                    fit: BoxFit.cover)),
+                            child: Column(
+                              children: [
+                                Padding(
+                                    padding: const EdgeInsets.all(5.0),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.end,
+                                        children: [
+                                          gleinfo.isFavorite
+                                              ? Container(
+                                                  color: Colors.brown,
+                                                  child: Text("-Promo",
+                                                      style: const TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: 'Varela',
+                                                          fontSize: 14.0)),
+                                                )
+                                              : Container(
+                                                  child: Text(""),
+                                                )
+                                        ])),
+                                Container(
+                                  // Code pour le nombre de photo.
+                                  width: 38,
+                                  margin:
+                                      EdgeInsets.only(top: 60.0, left: 100.0),
+                                  padding: EdgeInsets.all(2),
+                                  decoration: BoxDecoration(
+                                    color: Colors.white.withOpacity(.30),
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Row(
+                                    children: const [
+                                      Text(
+                                        '2',
+                                        style: TextStyle(color: Colors.white),
                                       ),
-                                      child: Row(
-                                        children: const [
-                                          Text(
-                                            '2',
-                                            style: TextStyle(color: Colors.white),
-                                          ),
-                                          Icon(
-                                            Icons.camera,
-                                            color: Colors.white,
-                                          ),
-                                        ],
+                                      Icon(
+                                        Icons.camera,
+                                        color: Colors.white,
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                               // alignment: Alignment.bottomRight,
-                              ),
+                              ],
+                            ),
+                            // alignment: Alignment.bottomRight,
+                          ),
                         ),
                       )),
                 ),
@@ -154,7 +160,6 @@ class _GalerieState extends State<Galerie> {
     super.initState();
     buildList();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -282,7 +287,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 50,
                         width: double.infinity,
-                        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: const Text(
                           'Vente de tissus traditionnel et autres articles de mode.',
                           textAlign: TextAlign.justify,
@@ -295,7 +301,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 30,
                         width: double.infinity,
-                        padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 15, top: 5),
                         child: const Text(
                           'Tel: +226 62825040',
                           textAlign: TextAlign.justify,
@@ -308,7 +315,8 @@ class _GalerieState extends State<Galerie> {
                       Container(
                         height: 50,
                         width: double.infinity,
-                        padding: const EdgeInsets.only(left: 15, right: 1, top: 5),
+                        padding:
+                            const EdgeInsets.only(left: 15, right: 1, top: 5),
                         child: const Text(
                           'Localisation: Ouagadougou / Karpala',
                           textAlign: TextAlign.justify,

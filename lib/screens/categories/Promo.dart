@@ -73,8 +73,14 @@ class _PromoState extends State<Promo> {
                               fontFamily: 'Varela',
                               fontSize: 14.0)),
                                     )
-                                    : const Icon(Icons.favorite_border,
-                                        color: Color(0xFFEF7532))
+                                    : Container(
+                                      color: Colors.brown,
+                                      child: Text("-Promo",
+                                                                style: const TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Varela',
+                              fontSize: 14.0)),
+                                    )
                               ])),
 
                                     Container(
