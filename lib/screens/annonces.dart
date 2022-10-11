@@ -286,6 +286,7 @@ class _AnnoncesState extends State<Annonces> {
                 height: 20,
               ),
               FloatingActionButton.extended(
+                heroTag: "annonces",
                 extendedPadding: const EdgeInsets.all(100.0),
                 label: const Text(
                   'Valider',

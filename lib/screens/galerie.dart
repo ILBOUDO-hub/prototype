@@ -314,8 +314,7 @@ class _GalerieState extends State<Galerie> {
                           width: MediaQuery.of(context).size.width - 30.0,
                           height: MediaQuery.of(context).size.height - 50.0,
                           child: GridView.count(
-                            physics: const BouncingScrollPhysics(
-                                parent: AlwaysScrollableScrollPhysics()),
+                            physics: NeverScrollableScrollPhysics(),
                             childAspectRatio: 0.815,
                             crossAxisCount: 2,
                             shrinkWrap: true,

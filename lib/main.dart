@@ -8,7 +8,6 @@ import 'package:prototype/screens/message.dart';
 import 'package:prototype/screens/parametres/favoris.dart';
 import 'package:prototype/screens/profile.dart';
 
-
 void main() {
   runApp(
     const MaterialApp(
@@ -28,7 +27,7 @@ class BottomNavbar extends StatefulWidget {
 
 class _BottomNavbarState extends State<BottomNavbar> {
   int _pageIndex = 0;
-  int currentIndex = 0; 
+  int currentIndex = 0;
 
   final List<Widget> _tabList = [
     MyHomePage(),
@@ -57,10 +56,10 @@ class _BottomNavbarState extends State<BottomNavbar> {
           IconButton(
             icon: const Icon(Icons.favorite_sharp),
             onPressed: () {
-                Navigator.push(context,
+              Navigator.push(context,
                   MaterialPageRoute(builder: (BuildContext context) {
-                  return Favoris();
-                })); 
+                return Favoris();
+              }));
             },
           ),
         ],
@@ -72,7 +71,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.brown,
         child: Icon(
-         Icons.camera_enhance,
+          Icons.camera_enhance,
         ),
         onPressed: (() {
           setState(() {

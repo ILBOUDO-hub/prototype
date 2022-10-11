@@ -65,7 +65,7 @@ class _PageProfileSate extends State<PageProfile> {
                       setState(() {
                         Navigator.push(context, MaterialPageRoute(
                           builder: (BuildContext context) {
-                          return galerie();
+                          return Galerie();
                         })); 
                       });
                     },
