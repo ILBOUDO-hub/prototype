@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/screens/categories/produit_detail.dart';
 import 'package:prototype/models/Product.dart';
+import 'package:dialog_alert/dialog_alert.dart';
 
 class Galerie extends StatefulWidget {
   @override
   //final assetPath1, assetPath2, cookieprice, cookiename, cookieauteur;
   //Galerie(
- //     {this.assetPath1, this.assetPath2,this.cookieprice, this.cookiename, this.cookieauteur});
+  //     {this.assetPath1, this.assetPath2,this.cookieprice, this.cookiename, this.cookieauteur});
 
   State<Galerie> createState() => _GalerieState();
 }
 
-class _GalerieState extends State<Galerie> { 
+class _GalerieState extends State<Galerie> {
   List<Container> movieOscar = [];
 
   buildList() async {
@@ -21,7 +22,7 @@ class _GalerieState extends State<Galerie> {
       final String nameposter = gleinfo.name;
       //final String cookieauteur = gleinfo.categorie;
       //final String categorieposter = gleinfo.name;
-      if (gleinfo.categorie == "voiture" ) {
+      if (gleinfo.categorie == "voiture") {
         final String priceposter = gleinfo.price.toString();
 
         movieOscar.add(Container(
@@ -64,13 +65,22 @@ class _GalerieState extends State<Galerie> {
                             child: Column(
                               children: [
                                 Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Container(
-                                                  child: const Icon(
-              Icons.delete,
-              color: Colors.brown,
-            ),
+                                    IconButton(
+                                      onPressed: () async {
+                                        final result = await showDialogAlert(
+                                            context: context,
+                                            title: "Confirmation",
+                                            message:
+                                                "Etes-vous sur de vouloir supprimer ?",
+                                            actionButtonTitle: "Oui",
+                                            cancelButtonTitle: "Non");
+                                        print(result);
+                                      },
+                                      icon: Icon(Icons.delete),
+                                      color: Colors.brown,
                                     ),
                                     Padding(
                                         padding: const EdgeInsets.all(5.0),
@@ -82,14 +92,18 @@ class _GalerieState extends State<Galerie> {
                                                   ? Container(
                                                       color: Colors.brown,
                                                       child: Text("-Promo",
-                                                          style: const TextStyle(
-                                                              color: Colors.white,
-                                                              fontFamily: 'Varela',
-                                                              fontSize: 14.0)),
+                                                          style:
+                                                              const TextStyle(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  fontFamily:
+                                                                      'Varela',
+                                                                  fontSize:
+                                                                      14.0)),
                                                     )
                                                   : Container(
-                                                    child: Text(""),
-                                                  )
+                                                      child: Text(""),
+                                                    )
                                             ])),
                                   ],
                                 ),
@@ -97,7 +111,7 @@ class _GalerieState extends State<Galerie> {
                                   // Code pour le nombre de photo.
                                   width: 38,
                                   margin:
-                                      EdgeInsets.only(top: 60.0, left: 100.0),
+                                      EdgeInsets.only(top: 45.0, left: 105.0),
                                   padding: EdgeInsets.all(2),
                                   decoration: BoxDecoration(
                                     color: Colors.white.withOpacity(.30),
