@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/screens/categories/appareil.dart';
+import 'package:prototype/screens/categories/boutique.dart';
 import 'package:prototype/screens/categories/engins.dart';
 import 'package:prototype/screens/categories/immobilier.dart';
 import 'package:prototype/screens/categories/accessoire.dart';
@@ -18,7 +19,7 @@ class _CategoryState extends State<Category>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -43,6 +44,13 @@ class _CategoryState extends State<Category>
               labelPadding: const EdgeInsets.only(right: 45.0),
               unselectedLabelColor: const Color(0xFFCDCDCD),
               tabs: const [
+                Tab(
+                  child: Text('Boutique',
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 21.0,
+                      )),
+                ),
                 Tab(
                   child: Text('Promo',
                       style: TextStyle(
@@ -86,6 +94,7 @@ class _CategoryState extends State<Category>
                   controller: _tabController,
                   children: [
                     //liste des widgets pour chaque page de categorie
+                    Boutique(),
                     Promo(),
                     Accessoire(),
                     Engins(),

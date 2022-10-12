@@ -148,8 +148,7 @@ class _FavorisState extends State<Favoris> {
             height: MediaQuery.of(context).size.height - 50.0,
 
             child: GridView.count(
-              physics: const BouncingScrollPhysics(
-                  parent: AlwaysScrollableScrollPhysics()),
+              physics: NeverScrollableScrollPhysics(),
               childAspectRatio: 0.815,
               crossAxisCount: 2,
               shrinkWrap: true,
