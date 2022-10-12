@@ -19,7 +19,7 @@ class _CategoryState extends State<Category>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 6, vsync: this);
+    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -44,13 +44,13 @@ class _CategoryState extends State<Category>
               labelPadding: const EdgeInsets.only(right: 45.0),
               unselectedLabelColor: const Color(0xFFCDCDCD),
               tabs: const [
-                Tab(
+                /*Tab(
                   child: Text('Boutique',
                       style: TextStyle(
                         fontFamily: 'Varela',
                         fontSize: 21.0,
                       )),
-                ),
+                ),*/
                 Tab(
                   child: Text('Promo',
                       style: TextStyle(
@@ -94,7 +94,7 @@ class _CategoryState extends State<Category>
                   controller: _tabController,
                   children: [
                     //liste des widgets pour chaque page de categorie
-                    Boutique(),
+                    //Boutique(),
                     Promo(),
                     Accessoire(),
                     Engins(),
