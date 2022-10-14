@@ -6,6 +6,7 @@ import 'package:prototype/screens/categories/immobilier.dart';
 import 'package:prototype/screens/categories/accessoire.dart';
 import 'package:prototype/screens/categories/Promo.dart';
 
+import 'categories/searchcategory.dart';
 
 class Category extends StatefulWidget {
   @override
@@ -28,13 +29,35 @@ class _CategoryState extends State<Category>
       body: ListView(
         physics: const NeverScrollableScrollPhysics(),
         padding: const EdgeInsets.only(left: 20.0),
-        children:  <Widget>[
+        children: <Widget>[
           const SizedBox(height: 15.0),
-          const Text('Categories',
-              style: TextStyle(
-                  fontFamily: 'Varela',
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold)),
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Text('Categories',
+                    style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold)),
+                IconButton(
+                  //Ici c'est le boutton qui permet rechercher un article selon sa categorie
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return SearchCategory();
+                    }));
+                  },
+                  icon: const Icon(
+                    Icons.search,
+                    size: 40,
+                  ),
+                  color: Color.fromARGB(255, 57, 57, 57),
+                ),
+              ],
+            ),
+          ),
           const SizedBox(height: 15.0),
           TabBar(
               controller: _tabController,
@@ -79,7 +102,7 @@ class _CategoryState extends State<Category>
                         fontSize: 21.0,
                       )),
                 ),
-                                Tab(
+                Tab(
                   child: Text('Immobiliers',
                       style: TextStyle(
                         fontFamily: 'Varela',
@@ -87,22 +110,18 @@ class _CategoryState extends State<Category>
                       )),
                 )
               ]),
-              Container(
-                height: MediaQuery.of(context).size.height - 50.0,
-                width: double.infinity,
-                child: TabBarView(
-                  controller: _tabController,
-                  children: [
-                    //liste des widgets pour chaque page de categorie
-                    //Boutique(),
-                    Promo(),
-                    Accessoire(),
-                    Engins(),
-                    Appareil(),
-                    Immobilier()
-                  ]
-                )
-              )
+          Container(
+              height: MediaQuery.of(context).size.height - 50.0,
+              width: double.infinity,
+              child: TabBarView(controller: _tabController, children: [
+                //liste des widgets pour chaque page de categorie
+                //Boutique(),
+                Promo(),
+                Accessoire(),
+                Engins(),
+                Appareil(),
+                Immobilier()
+              ]))
         ],
       ),
     );

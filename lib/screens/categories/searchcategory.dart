@@ -3,12 +3,12 @@ import 'package:prototype/models/Product.dart';
 
 import 'package:prototype/screens/galerie.dart';
 
-class MyHomePage extends StatefulWidget {
+class SearchCategory extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<SearchCategory> createState() => _SearchCategoryState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SearchCategoryState extends State<SearchCategory> {
   List<Container> movieOscar = [];
 
   buildList() async {
@@ -129,6 +129,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: movieOscar,
                 ),
               ),
+              SizedBox(height: 100,)
             ],
           )
         ]));
