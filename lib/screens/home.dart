@@ -16,7 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
     for (var i = 0; i < gateau.length; i++) {
       final gleinfo = gateau[i];
       //final String categorieposter = gleinfo.name;
-      if (gleinfo.auteur != "voiture") {
+      if (gleinfo.auteur != "CSDFF") {
         movieOscar.add(Container(
           //  width: 260,
           color: const Color.fromARGB(255, 252, 252, 249),

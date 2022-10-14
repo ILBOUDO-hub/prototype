@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:prototype/main.dart';
 import 'package:prototype/login/sign_up.dart';
+import '../body/body_home.dart';
 import 'reusable_widgets.dart';
 
 
@@ -51,24 +52,17 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
 
                     signInSignUpButton(context, true, () {
-                       FirebaseAuth.instance
-                          .signInWithEmailAndPassword(
-                              email: _emailTextController.text,
-                              password: _passwordTextController.text)
-                          .then((value) {
+                 
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => BottomNavbar()));
-                      }).onError((error, stackTrace) {
-                        print("error ${error.toString()}");
-                      });
-                    }),
-                    signUpOption()
-                  ],
+                      })])
+                   
+                  
                 ),
               ),
-            )),
+            )
         /*floatingActionButton: FloatingActionButton.extended(
             heroTag: 'uniqueTag',
             label: Row(
@@ -85,24 +79,5 @@ class _SignInScreenState extends State<SignInScreen> {
             );
   }
  
-  Row signUpOption() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Text(
-          "Don't have account?",
-          style: TextStyle(color: Colors.white70),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SignUpScreen()));
-          },
-          child: const Text(" Sign Up",
-              style:
-                  TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-        )
-      ],
-    );
-  }
+
 }
